@@ -17,7 +17,7 @@ final class AOC {
             let dateComponents = Calendar.current.dateComponents([.day, .month, .year], from: Date())
             let day = dateComponents.day!
 
-            if dateComponents.year == AOC.year && dateComponents.month == 12 && day < 25 {
+            if dateComponents.year == Config.year && dateComponents.month == 12 && day < 25 {
                 run(day: day)
             } else {
                 run(day: 1)
@@ -104,11 +104,11 @@ final class AOC {
     }
 
     func get(day: Int) -> String? {
-        guard let url = URL(string: "https://adventofcode.com/\(AOC.year)/day/\(day)/input") else { return nil }
+        guard let url = URL(string: "https://adventofcode.com/\(Config.year)/day/\(day)/input") else { return nil }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
 
-        request.addValue("session=\(AOC.session)", forHTTPHeaderField: "Cookie")
+        request.addValue("session=\(Config.session)", forHTTPHeaderField: "Cookie")
 
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: nil)
 

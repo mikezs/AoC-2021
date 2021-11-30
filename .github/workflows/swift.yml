@@ -14,8 +14,7 @@ jobs:
     - name: Install tools
       run: |
         brew update
-        brew install gnupg git-secret
-        brew upgrade
+        brew install git-secret
     - name: Import GPG Key
       run: |
         echo "${{ secrets.GPG_KEY }}" > key.asc
