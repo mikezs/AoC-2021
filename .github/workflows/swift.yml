@@ -18,7 +18,7 @@ jobs:
         brew upgrade
     - name: Import GPG Key
       run: |
-        echo ${{ secrets.GPG_KEY }} > key.asc
+        echo "${{ secrets.GPG_KEY }}" > key.asc
         gpg --allow-secret-key-import --import --no-tty --batch key.asc
     - name: Decrypt secrets
       run: git secret reveal
