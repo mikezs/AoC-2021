@@ -85,8 +85,8 @@
 		"AoC::AoC::Product" /* AoC */ = {isa = PBXFileReference; lastKnownFileType = text; path = AoC; sourceTree = BUILT_PRODUCTS_DIR; };
 		"AoC::AoCKit::Product" /* AoCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AoCKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"AoC::AoCKitTests::Product" /* AoCKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AoCKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE47DE9A275634B800F653B9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "../AoC-2020/README.md"; sourceTree = "<group>"; };
 		BE47DE9B27563C4400F653B9 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		BE47DE9D2756CDF500F653B9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_11 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Day1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1.swift; sourceTree = "<group>"; };
 		OBJ_13 /* Day10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10.swift; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				BE47DE9A275634B800F653B9 /* README.md */,
+				BE47DE9D2756CDF500F653B9 /* README.md */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_38 /* Tests */,
