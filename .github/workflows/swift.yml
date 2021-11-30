@@ -22,4 +22,6 @@ jobs:
     - name: Decrypt secrets
       run: git secret reveal
     - name: Run tests
-      run: swift test -v
+      run: swift test -v --enable-code-coverage
+    - name: Codecov
+      run: bash <(curl -s https://codecov.io/bash)
