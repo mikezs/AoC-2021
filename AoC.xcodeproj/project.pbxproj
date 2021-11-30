@@ -1,0 +1,735 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"AoC::AoCPackageTests::ProductTarget" /* AoCPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_108 /* Build configuration list for PBXAggregateTarget "AoCPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_111 /* PBXTargetDependency */,
+			);
+			name = AoCPackageTests;
+			productName = AoCPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		BE47DE9C27563C4400F653B9 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47DE9B27563C4400F653B9 /* config.swift */; };
+		OBJ_106 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_53 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
+		OBJ_55 /* AoCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "AoC::AoCKit::Product" /* AoCKit.framework */; };
+		OBJ_62 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Day.swift */; };
+		OBJ_63 /* Day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Day1.swift */; };
+		OBJ_64 /* Day10.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Day10.swift */; };
+		OBJ_65 /* Day11.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Day11.swift */; };
+		OBJ_66 /* Day12.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Day12.swift */; };
+		OBJ_67 /* Day13.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Day13.swift */; };
+		OBJ_68 /* Day14.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Day14.swift */; };
+		OBJ_69 /* Day15.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Day15.swift */; };
+		OBJ_70 /* Day16.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Day16.swift */; };
+		OBJ_71 /* Day17.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* Day17.swift */; };
+		OBJ_72 /* Day18.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* Day18.swift */; };
+		OBJ_73 /* Day19.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Day19.swift */; };
+		OBJ_74 /* Day2.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* Day2.swift */; };
+		OBJ_75 /* Day20.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Day20.swift */; };
+		OBJ_76 /* Day21.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* Day21.swift */; };
+		OBJ_77 /* Day22.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Day22.swift */; };
+		OBJ_78 /* Day23.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Day23.swift */; };
+		OBJ_79 /* Day24.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Day24.swift */; };
+		OBJ_80 /* Day25.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* Day25.swift */; };
+		OBJ_81 /* Day3.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* Day3.swift */; };
+		OBJ_82 /* Day4.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Day4.swift */; };
+		OBJ_83 /* Day5.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Day5.swift */; };
+		OBJ_84 /* Day6.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Day6.swift */; };
+		OBJ_85 /* Day7.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* Day7.swift */; };
+		OBJ_86 /* Day8.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* Day8.swift */; };
+		OBJ_87 /* Day9.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* Day9.swift */; };
+		OBJ_95 /* AoC_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* AoC_Tests.swift */; };
+		OBJ_96 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* ExtensionTests.swift */; };
+		OBJ_97 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* XCTestManifests.swift */; };
+		OBJ_99 /* AoCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "AoC::AoCKit::Product" /* AoCKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE47DE972756299B00F653B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "AoC::AoCKit";
+			remoteInfo = AoCKit;
+		};
+		BE47DE982756299B00F653B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "AoC::AoCKit";
+			remoteInfo = AoCKit;
+		};
+		BE47DE992756299B00F653B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "AoC::AoCKitTests";
+			remoteInfo = AoCKitTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		"AoC::AoC::Product" /* AoC */ = {isa = PBXFileReference; lastKnownFileType = text; path = AoC; sourceTree = BUILT_PRODUCTS_DIR; };
+		"AoC::AoCKit::Product" /* AoCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AoCKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"AoC::AoCKitTests::Product" /* AoCKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AoCKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE47DE9A275634B800F653B9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "../AoC-2020/README.md"; sourceTree = "<group>"; };
+		BE47DE9B27563C4400F653B9 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		OBJ_11 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		OBJ_12 /* Day1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1.swift; sourceTree = "<group>"; };
+		OBJ_13 /* Day10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10.swift; sourceTree = "<group>"; };
+		OBJ_14 /* Day11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day11.swift; sourceTree = "<group>"; };
+		OBJ_15 /* Day12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12.swift; sourceTree = "<group>"; };
+		OBJ_16 /* Day13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day13.swift; sourceTree = "<group>"; };
+		OBJ_17 /* Day14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day14.swift; sourceTree = "<group>"; };
+		OBJ_18 /* Day15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day15.swift; sourceTree = "<group>"; };
+		OBJ_19 /* Day16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day16.swift; sourceTree = "<group>"; };
+		OBJ_20 /* Day17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day17.swift; sourceTree = "<group>"; };
+		OBJ_21 /* Day18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day18.swift; sourceTree = "<group>"; };
+		OBJ_22 /* Day19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day19.swift; sourceTree = "<group>"; };
+		OBJ_23 /* Day2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2.swift; sourceTree = "<group>"; };
+		OBJ_24 /* Day20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day20.swift; sourceTree = "<group>"; };
+		OBJ_25 /* Day21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day21.swift; sourceTree = "<group>"; };
+		OBJ_26 /* Day22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day22.swift; sourceTree = "<group>"; };
+		OBJ_27 /* Day23.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day23.swift; sourceTree = "<group>"; };
+		OBJ_28 /* Day24.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day24.swift; sourceTree = "<group>"; };
+		OBJ_29 /* Day25.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day25.swift; sourceTree = "<group>"; };
+		OBJ_30 /* Day3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3.swift; sourceTree = "<group>"; };
+		OBJ_31 /* Day4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day4.swift; sourceTree = "<group>"; };
+		OBJ_32 /* Day5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day5.swift; sourceTree = "<group>"; };
+		OBJ_33 /* Day6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day6.swift; sourceTree = "<group>"; };
+		OBJ_34 /* Day7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day7.swift; sourceTree = "<group>"; };
+		OBJ_35 /* Day8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day8.swift; sourceTree = "<group>"; };
+		OBJ_36 /* Day9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day9.swift; sourceTree = "<group>"; };
+		OBJ_40 /* AoC_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AoC_Tests.swift; sourceTree = "<group>"; };
+		OBJ_41 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		OBJ_42 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_47 /* Input */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Input; sourceTree = SOURCE_ROOT; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_55 /* AoCKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_99 /* AoCKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_10 /* AoCKit */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* Day.swift */,
+				OBJ_12 /* Day1.swift */,
+				OBJ_23 /* Day2.swift */,
+				OBJ_30 /* Day3.swift */,
+				OBJ_31 /* Day4.swift */,
+				OBJ_32 /* Day5.swift */,
+				OBJ_33 /* Day6.swift */,
+				OBJ_34 /* Day7.swift */,
+				OBJ_35 /* Day8.swift */,
+				OBJ_36 /* Day9.swift */,
+				OBJ_13 /* Day10.swift */,
+				OBJ_14 /* Day11.swift */,
+				OBJ_15 /* Day12.swift */,
+				OBJ_16 /* Day13.swift */,
+				OBJ_17 /* Day14.swift */,
+				OBJ_18 /* Day15.swift */,
+				OBJ_19 /* Day16.swift */,
+				OBJ_20 /* Day17.swift */,
+				OBJ_21 /* Day18.swift */,
+				OBJ_22 /* Day19.swift */,
+				OBJ_24 /* Day20.swift */,
+				OBJ_25 /* Day21.swift */,
+				OBJ_26 /* Day22.swift */,
+				OBJ_27 /* Day23.swift */,
+				OBJ_28 /* Day24.swift */,
+				OBJ_29 /* Day25.swift */,
+			);
+			name = AoCKit;
+			path = Sources/AoCKit;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_38 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_39 /* AoCKitTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_39 /* AoCKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_40 /* AoC_Tests.swift */,
+				OBJ_41 /* ExtensionTests.swift */,
+				OBJ_42 /* XCTestManifests.swift */,
+			);
+			name = AoCKitTests;
+			path = Tests/AoCKitTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"AoC::AoC::Product" /* AoC */,
+				"AoC::AoCKit::Product" /* AoCKit.framework */,
+				"AoC::AoCKitTests::Product" /* AoCKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				BE47DE9A275634B800F653B9 /* README.md */,
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_38 /* Tests */,
+				OBJ_43 /* Products */,
+				OBJ_47 /* Input */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* AoC */,
+				OBJ_10 /* AoCKit */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* AoC */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* main.swift */,
+				BE47DE9B27563C4400F653B9 /* config.swift */,
+			);
+			name = AoC;
+			path = Sources/AoC;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"AoC::AoC" /* AoC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_49 /* Build configuration list for PBXNativeTarget "AoC" */;
+			buildPhases = (
+				OBJ_52 /* Sources */,
+				OBJ_54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_56 /* PBXTargetDependency */,
+			);
+			name = AoC;
+			productName = AoC;
+			productReference = "AoC::AoC::Product" /* AoC */;
+			productType = "com.apple.product-type.tool";
+		};
+		"AoC::AoCKit" /* AoCKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_58 /* Build configuration list for PBXNativeTarget "AoCKit" */;
+			buildPhases = (
+				OBJ_61 /* Sources */,
+				OBJ_89 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AoCKit;
+			productName = AoCKit;
+			productReference = "AoC::AoCKit::Product" /* AoCKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"AoC::AoCKitTests" /* AoCKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_91 /* Build configuration list for PBXNativeTarget "AoCKitTests" */;
+			buildPhases = (
+				OBJ_94 /* Sources */,
+				OBJ_98 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_100 /* PBXTargetDependency */,
+			);
+			name = AoCKitTests;
+			productName = AoCKitTests;
+			productReference = "AoC::AoCKitTests::Product" /* AoCKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"AoC::SwiftPMPackageDescription" /* AoCPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_102 /* Build configuration list for PBXNativeTarget "AoCPackageDescription" */;
+			buildPhases = (
+				OBJ_105 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AoCPackageDescription;
+			productName = AoCPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "AoC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"AoC::AoC" /* AoC */,
+				"AoC::AoCKit" /* AoCKit */,
+				"AoC::AoCKitTests" /* AoCKitTests */,
+				"AoC::SwiftPMPackageDescription" /* AoCPackageDescription */,
+				"AoC::AoCPackageTests::ProductTarget" /* AoCPackageTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_105 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_106 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_53 /* main.swift in Sources */,
+				BE47DE9C27563C4400F653B9 /* config.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_62 /* Day.swift in Sources */,
+				OBJ_63 /* Day1.swift in Sources */,
+				OBJ_64 /* Day10.swift in Sources */,
+				OBJ_65 /* Day11.swift in Sources */,
+				OBJ_66 /* Day12.swift in Sources */,
+				OBJ_67 /* Day13.swift in Sources */,
+				OBJ_68 /* Day14.swift in Sources */,
+				OBJ_69 /* Day15.swift in Sources */,
+				OBJ_70 /* Day16.swift in Sources */,
+				OBJ_71 /* Day17.swift in Sources */,
+				OBJ_72 /* Day18.swift in Sources */,
+				OBJ_73 /* Day19.swift in Sources */,
+				OBJ_74 /* Day2.swift in Sources */,
+				OBJ_75 /* Day20.swift in Sources */,
+				OBJ_76 /* Day21.swift in Sources */,
+				OBJ_77 /* Day22.swift in Sources */,
+				OBJ_78 /* Day23.swift in Sources */,
+				OBJ_79 /* Day24.swift in Sources */,
+				OBJ_80 /* Day25.swift in Sources */,
+				OBJ_81 /* Day3.swift in Sources */,
+				OBJ_82 /* Day4.swift in Sources */,
+				OBJ_83 /* Day5.swift in Sources */,
+				OBJ_84 /* Day6.swift in Sources */,
+				OBJ_85 /* Day7.swift in Sources */,
+				OBJ_86 /* Day8.swift in Sources */,
+				OBJ_87 /* Day9.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_95 /* AoC_Tests.swift in Sources */,
+				OBJ_96 /* ExtensionTests.swift in Sources */,
+				OBJ_97 /* XCTestManifests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "AoC::AoCKit" /* AoCKit */;
+			targetProxy = BE47DE982756299B00F653B9 /* PBXContainerItemProxy */;
+		};
+		OBJ_111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "AoC::AoCKitTests" /* AoCKitTests */;
+			targetProxy = BE47DE992756299B00F653B9 /* PBXContainerItemProxy */;
+		};
+		OBJ_56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "AoC::AoCKit" /* AoCKit */;
+			targetProxy = BE47DE972756299B00F653B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -package-description-version 5.3.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_104 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -package-description-version 5.3.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_109 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_110 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "$(AVAILABLE_PLATFORMS)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "$(AVAILABLE_PLATFORMS)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = AoC.xcodeproj/AoC_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = AoC;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = AoC.xcodeproj/AoC_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = AoC;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = AoC.xcodeproj/AoCKit_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = AoCKit;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = AoCKit;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = AoC.xcodeproj/AoCKit_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = AoCKit;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = AoCKit;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = AoC.xcodeproj/AoCKitTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = AoCKitTests;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		OBJ_93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = AoC.xcodeproj/AoCKitTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = AoCKitTests;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_102 /* Build configuration list for PBXNativeTarget "AoCPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_103 /* Debug */,
+				OBJ_104 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_108 /* Build configuration list for PBXAggregateTarget "AoCPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_109 /* Debug */,
+				OBJ_110 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "AoC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_49 /* Build configuration list for PBXNativeTarget "AoC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_50 /* Debug */,
+				OBJ_51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_58 /* Build configuration list for PBXNativeTarget "AoCKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_59 /* Debug */,
+				OBJ_60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_91 /* Build configuration list for PBXNativeTarget "AoCKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_92 /* Debug */,
+				OBJ_93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

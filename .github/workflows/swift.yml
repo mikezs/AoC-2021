@@ -1,0 +1,26 @@
+name: Swift
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install tools
+      run: |
+        brew update
+        brew install gnupg git-secret
+        brew upgrade
+    - name: Import GPG Key
+      run: |
+        echo ${{ secrets.GPG_KEY }} > key.asc
+        gpg --allow-secret-key-import --import --no-tty --batch key.asc
+    - name: Decrypt secrets
+      run: git secret reveal
+    - name: Run tests
+      run: swift test -v
