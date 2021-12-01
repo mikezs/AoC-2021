@@ -1,5 +1,5 @@
 import XCTest
-import AoCKit
+@testable import AoCKit
 import class Foundation.Bundle
 
 final class AoCTests: XCTestCase {
