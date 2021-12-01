@@ -12,7 +12,11 @@ let package = Package(
             name: "AoC",
             dependencies: ["AoCKit"],
             exclude: ["config.swift.secret"]),
-        .target(name: "AoCKit"),
+        .target(
+            name: "AoCKit",
+            dependencies: [
+                .package(url: "https://github.com/apple/swift-algorithms", from: "1.0.0")
+            ]),
         .testTarget(
             name: "AoCKitTests",
             dependencies: ["AoCKit"])
