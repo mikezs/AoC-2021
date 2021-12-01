@@ -34,3 +34,7 @@ To run day 1:
 ## Implementation notes
 
 ### Day 1
+Logged on to find [SFrost007](https://github.com/SFrost007/) had already got his 2 stars! Although this year we're not competing on it (I cheated by having childcare duties meaning I could work on it before everyone else woke up) :D
+
+First part was an array look-ahead problem, so just did a loop making sure I didn't go out of bounds and keeping a seperate variable for what I was looking at. Second part needed a window calculating, so made and tested a function for that. I really struggled with the indexes of the array bounds checking, so it took me 10 mins to write a function that should have taken 2. Thank goodness for tests otherwise that could have been an hour. I'm rusty from last year.
+

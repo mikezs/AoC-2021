@@ -5,14 +5,26 @@ import class Foundation.Bundle
 final class AoCTests: XCTestCase {
     // MARK: - Day 1
     let day1Input = """
+199
+200
+208
+210
+200
+207
+240
+269
+260
+263
 """
 
     func testDay1Part1() {
-        XCTAssertEqual(Day1(input: day1Input).part1(), 0)
+        XCTAssertEqual(Day1(input: day1Input).part1(), 7)
     }
 
     func testDay1Part2() {
-        XCTAssertEqual(Day1(input: day1Input).part2(), 0)
+        XCTAssertEqual(Day1(input: day1Input).window(at: 0), 607)
+        XCTAssertEqual(Day1(input: day1Input).window(at: 7), 792)
+        XCTAssertEqual(Day1(input: day1Input).part2(), 5)
     }
 
     // MARK: - Day 2
