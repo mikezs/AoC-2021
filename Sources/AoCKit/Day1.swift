@@ -1,4 +1,5 @@
 import Foundation
+import Algorithms
 
 public final class Day1: Day {
     let input: [Int]
@@ -8,22 +9,22 @@ public final class Day1: Day {
     }
 
     public func part1() -> Int {
+        incrementingValues(input: input)
+    }
+
+    public func part2() -> Int {
+        incrementingValues(input:
+                            input
+                                .windows(ofCount: 3)
+                                .map { $0.reduce(0, +) }
+        )
+    }
+
+    private func incrementingValues(input: [Int]) -> Int {
         input
             .enumerated()
             .dropLast()
             .filter { $0.element < input[$0.offset + 1] }
             .count
-    }
-
-    public func part2() -> Int {
-        Array(0 ..< input.count - 3)
-            .filter { window(at: $0) < window(at: $0 + 1) }
-            .count
-    }
-
-    func window(at index: Int) -> Int {
-        guard index < input.count - 2 else { fatalError("index out of range") }
-
-        return input[index ... index + 2].reduce(0, +)
     }
 }

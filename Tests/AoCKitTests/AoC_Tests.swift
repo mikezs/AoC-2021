@@ -22,8 +22,6 @@ final class AoCTests: XCTestCase {
     }
 
     func testDay1Part2() {
-        XCTAssertEqual(Day1(input: day1Input).window(at: 0), 607)
-        XCTAssertEqual(Day1(input: day1Input).window(at: 7), 792)
         XCTAssertEqual(Day1(input: day1Input).part2(), 5)
     }
 

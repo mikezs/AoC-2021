@@ -38,3 +38,4 @@ Logged on to find [SFrost007](https://github.com/SFrost007/) had already got his
 
 First part was an array look-ahead problem, so just did a loop making sure I didn't go out of bounds and keeping a seperate variable for what I was looking at. Second part needed a window calculating, so made and tested a function for that. I really struggled with the indexes of the array bounds checking, so it took me 10 mins to write a function that should have taken 2. Thank goodness for tests otherwise that could have been an hour. I'm rusty from last year.
 
+Edit: I went back and added the swift-algorithms package and made a funciton to compute the answer, part 1 just used it with the array, and part 2 with the windows calculated using the Algorithms library.
