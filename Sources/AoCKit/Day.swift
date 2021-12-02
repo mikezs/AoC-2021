@@ -1,9 +1,13 @@
 import Foundation
 
+enum Error: Swift.Error {
+    case invalidInput
+}
+
 public protocol Day {
-    init(input: String)
-    func part1() -> Int
-    func part2() -> Int
+    init(input: String) throws
+    func part1() throws -> Int
+    func part2() throws -> Int
 }
 
 extension String {
