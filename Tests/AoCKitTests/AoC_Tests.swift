@@ -27,14 +27,20 @@ final class AoCTests: XCTestCase {
 
     // MARK: - Day 2
     let day2Input = """
+forward 5
+down 5
+forward 8
+up 3
+down 8
+forward 2
 """
 
     func testDay2Part1() {
-        XCTAssertEqual(Day2(input: day2Input).part1(), 0)
+        XCTAssertEqual(Day2(input: day2Input).part1(), 150)
     }
 
     func testDay2Part2() {
-        XCTAssertEqual(Day2(input: day2Input).part2(), 0)
+        XCTAssertEqual(Day2(input: day2Input).part2(), 900)
     }
 
     // MARK: - Day 3
