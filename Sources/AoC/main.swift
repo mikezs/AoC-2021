@@ -58,11 +58,28 @@ final class AOC {
         ]
 
         guard let input = self.input(for: number) else {
-            fatalError("Could not load input for day \(number)")
+            let message = "Could not load input for day \(number)"
+            assertionFailure(message)
+            print(message)
+            return
         }
 
-        guard let day = days[number]?.init(input: input) else {
-            fatalError("Day \(number) is not yet implemented")
+        let day: Day
+
+        do {
+            guard let tryDay = try days[number]?.init(input: input) else {
+                let message = "Day \(number) is not yet implemented"
+                assertionFailure(message)
+                print(message)
+                return
+            }
+
+            day = tryDay
+        } catch {
+            let message = "Day \(number) failed with \(error)"
+            assertionFailure(message)
+            print(message)
+            return
         }
 
         #if DEBUG
@@ -74,16 +91,34 @@ final class AOC {
         print("Running Day \(number) as \(target)")
 
         var date = Date()
-        let part1 = day.part1()
-        let part1Time = formatter.string(from: NSNumber(value: Date().timeIntervalSince(date))) ?? "N/A"
+        let part1: Int
 
-        print("Day \(number) Part 1 took \(part1Time) seconds")
+        do {
+            part1 = try day.part1()
+            let part1Time = formatter.string(from: NSNumber(value: Date().timeIntervalSince(date))) ?? "N/A"
+
+            print("Day \(number) Part 1 took \(part1Time) seconds")
+        } catch {
+            let message = "Day \(number) Part 1 failed with \(error)"
+            assertionFailure(message)
+            print(message)
+            return
+        }
 
         date = Date()
-        let part2 = day.part2()
-        let part2Time = formatter.string(from: NSNumber(value: Date().timeIntervalSince(date))) ?? "N/A"
+        let part2: Int
 
-        print("Day \(number) Part 2 took \(part2Time) seconds")
+        do {
+            part2 = try day.part2()
+            let part2Time = formatter.string(from: NSNumber(value: Date().timeIntervalSince(date))) ?? "N/A"
+
+            print("Day \(number) Part 2 took \(part2Time) seconds")
+        } catch {
+            let message = "Day \(number) Part 2 failed with \(error)"
+            assertionFailure(message)
+            print(message)
+            return
+        }
 
         print("Part 1: \(part1)")
         print("Part 2: \(part2)")
