@@ -1,21 +1,27 @@
 import Foundation
 
 public final class Day2: Day {
+    public enum Error: Swift.Error {
+        case unrecognizedCommand
+    }
+
     let input: [(direction: String, amount: Int)]
 
-    public init(input: String) {
-        self.input = input.trimmedLines.compactMap {
+    public init(input: String) throws {
+        self.input = try input.trimmedLines.compactMap {
             let parts = $0.components(separatedBy: " ")
-            guard parts.count == 2, let int = Int(parts[1]) else { fatalError() }
+            guard parts.count == 2, let int = Int(parts[1]) else {
+                throw AoCKit.Error.invalidInput
+            }
             return (direction: parts[0], amount: int)
         }
     }
 
-    public func part1() -> Int {
+    public func part1() throws -> Int {
         var horizontal = 0
         var depth = 0
 
-        input.forEach { command in
+        try input.forEach { command in
             switch command.direction {
             case "forward":
                 horizontal += command.amount
@@ -24,19 +30,19 @@ public final class Day2: Day {
             case "up":
                 depth -= command.amount
             default:
-                fatalError("unrecognised command")
+                throw Error.unrecognizedCommand
             }
         }
 
         return horizontal * depth
     }
 
-    public func part2() -> Int {
+    public func part2() throws -> Int {
         var horizontal = 0
         var depth = 0
         var aim = 0
 
-        input.forEach { command in
+        try input.forEach { command in
             switch command.direction {
             case "forward":
                 horizontal += command.amount
@@ -46,7 +52,7 @@ public final class Day2: Day {
             case "up":
                 aim -= command.amount
             default:
-                fatalError("unrecognised command")
+                throw Error.unrecognizedCommand
             }
         }
 

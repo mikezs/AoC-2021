@@ -35,12 +35,51 @@ down 8
 forward 2
 """
 
-    func testDay2Part1() {
-        XCTAssertEqual(Day2(input: day2Input).part1(), 150)
+    func testDay2InitFailure() {
+        do {
+            _ = try Day2(input: "throw a")
+            XCTFail("Expected error to be thrown")
+        } catch {
+            if case AoCKit.Error.invalidInput = error {
+                // Pass
+            } else {
+                XCTFail("Invalid error thrown")
+            }
+        }
+    }
+
+    func testDay2Part1InvalidInput() {
+        do {
+            _ = try Day2(input: "throw 1").part1()
+            XCTFail("Expected error to be thrown")
+        } catch {
+            if case Day2.Error.unrecognizedCommand = error {
+                // Pass
+            } else {
+                XCTFail("Invalid error thrown")
+            }
+        }
+    }
+
+    func testDay2Part1() throws {
+        XCTAssertEqual(try Day2(input: day2Input).part1(), 150)
+    }
+
+    func testDay2Part2InvalidInput() {
+        do {
+            _ = try Day2(input: "throw 2").part2()
+            XCTFail("Expected error to be thrown")
+        } catch {
+            if case Day2.Error.unrecognizedCommand = error {
+                // Pass
+            } else {
+                XCTFail("Invalid error thrown")
+            }
+        }
     }
 
     func testDay2Part2() {
-        XCTAssertEqual(Day2(input: day2Input).part2(), 900)
+        XCTAssertEqual(try Day2(input: day2Input).part2(), 900)
     }
 
     // MARK: - Day 3
