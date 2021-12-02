@@ -1,13 +1,13 @@
 import Foundation
 
 public final class Day2: Day {
-    let input: [(String, Int)]
+    let input: [(direction: String, amount: Int)]
 
     public init(input: String) {
         self.input = input.trimmedLines.compactMap {
             let parts = $0.components(separatedBy: " ")
-            guard let int = Int(parts[1]) else { fatalError() }
-            return (parts[0], int)
+            guard parts.count == 2, let int = Int(parts[1]) else { fatalError() }
+            return (direction: parts[0], amount: int)
         }
     }
 
@@ -15,15 +15,16 @@ public final class Day2: Day {
         var horizontal = 0
         var depth = 0
 
-        input.forEach {
-            if $0.0 == "forward" {
-                horizontal += $0.1
-            } else if $0.0 == "down" {
-                depth += $0.1
-            } else if $0.0 == "up" {
-                depth -= $0.1
-            } else {
-                fatalError()
+        input.forEach { command in
+            switch command.direction {
+            case "forward":
+                horizontal += command.amount
+            case "down":
+                depth += command.amount
+            case "up":
+                depth -= command.amount
+            default:
+                fatalError("unrecognised command")
             }
         }
 
@@ -35,16 +36,17 @@ public final class Day2: Day {
         var depth = 0
         var aim = 0
 
-        input.forEach {
-            if $0.0 == "forward" {
-                horizontal += $0.1
-                depth += aim * $0.1
-            } else if $0.0 == "down" {
-                aim += $0.1
-            } else if $0.0 == "up" {
-                aim -= $0.1
-            } else {
-                fatalError()
+        input.forEach { command in
+            switch command.direction {
+            case "forward":
+                horizontal += command.amount
+                depth += aim * command.amount
+            case "down":
+                aim += command.amount
+            case "up":
+                aim -= command.amount
+            default:
+                fatalError("unrecognised command")
             }
         }
 
