@@ -3,6 +3,9 @@ import XCTest
 import class Foundation.Bundle
 
 final class AoCTests: XCTestCase {
+    static let expectedError = "Expected error to be thrown"
+    static let invalidError = "Invalid error thrown"
+
     // MARK: - Day 1
     let day1Input = """
 199
@@ -38,12 +41,12 @@ forward 2
     func testDay2InitFailure() {
         do {
             _ = try Day2(input: "throw a")
-            XCTFail("Expected error to be thrown")
+            XCTFail(AoCTests.expectedError)
         } catch {
             if case AoCKit.Error.invalidInput = error {
                 // Pass
             } else {
-                XCTFail("Invalid error thrown")
+                XCTFail(AoCTests.invalidError)
             }
         }
     }
@@ -51,12 +54,12 @@ forward 2
     func testDay2Part1InvalidInput() {
         do {
             _ = try Day2(input: "throw 1").part1()
-            XCTFail("Expected error to be thrown")
+            XCTFail(AoCTests.expectedError)
         } catch {
             if case Day2.Error.unrecognizedCommand = error {
                 // Pass
             } else {
-                XCTFail("Invalid error thrown")
+                XCTFail(AoCTests.invalidError)
             }
         }
     }
@@ -68,12 +71,12 @@ forward 2
     func testDay2Part2InvalidInput() {
         do {
             _ = try Day2(input: "throw 2").part2()
-            XCTFail("Expected error to be thrown")
+            XCTFail(AoCTests.expectedError)
         } catch {
             if case Day2.Error.unrecognizedCommand = error {
                 // Pass
             } else {
-                XCTFail("Invalid error thrown")
+                XCTFail(AoCTests.invalidError)
             }
         }
     }
