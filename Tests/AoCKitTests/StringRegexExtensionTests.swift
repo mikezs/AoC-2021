@@ -30,11 +30,11 @@ final class StringRegexExtensionTests: XCTestCase {
     }
 
     func testStringContainsRegexOperator() {
-        XCTAssertTrue("abc123" ¬= "[0-9]")
-        XCTAssertTrue("abc123" ¬= "c")
-        XCTAssertTrue("abc123" ¬= ".")
-        XCTAssertFalse("abc" ¬= "[0-9]")
-        XCTAssertFalse("abc" ¬= "1")
-        XCTAssertFalse("" ¬= "")
+        XCTAssertTrue("abc123" =¬ "[0-9]")
+        XCTAssertTrue("abc123" =¬ "c")
+        XCTAssertTrue("abc123" =¬ ".")
+        XCTAssertFalse("abc" =¬ "[0-9]")
+        XCTAssertFalse("abc" =¬ "1")
+        XCTAssertFalse("" =¬ "")
     }
 }
