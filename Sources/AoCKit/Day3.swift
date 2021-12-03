@@ -8,81 +8,37 @@ public final class Day3: Day {
     }
 
     public func part1() throws -> Int {
-        var gammaBinary = ""
-        var epsilonBinary = ""
+        let gamma = String(
+            (0 ..< input[0].count)
+            .map {
+                input.verticalSlice($0).mode()[0]
+            })
+        let epsilon = gamma.replacing(pairs: [("0", "1"), ("1", "0")])
 
-        for i in 0 ..< input[0].count {
-            var one = 0
-            var zero = 0
-
-            input.forEach {
-                ($0[i] == "0") ? (zero += 1) : (one += 1)
-            }
-
-            gammaBinary += one > zero ? "1" : "0"
-            epsilonBinary += one > zero ? "0" : "1"
-        }
-
-        guard let gamma = Int(gammaBinary, radix: 2),
-              let epsilon = Int(epsilonBinary, radix: 2) else         {
-            throw Error.invalidInput
-        }
-
-        return gamma * epsilon
+        return (gamma.binaryAsInt ?? 0) * (epsilon.binaryAsInt ?? 0)
     }
 
     public func part2() throws -> Int {
-        // Copy input
-        var oxygenResult = input
-        var co2Result = input
+        var oxygens = input
+        var co2s = input
 
-        var index = 0
-        while oxygenResult.count > 1 {
-            var one = 0
-            var zero = 0
+        for index in 0 ..< input[0].count where oxygens.count > 1 {
+            let modes = oxygens.verticalSlice(index).mode()
 
-            let slice = verticalSlice(array: oxygenResult, at: index)
-            slice.forEach {
-                ($0 == "0") ? (zero += 1) : (one += 1)
+            oxygens = oxygens.filter {
+                $0[index] == (modes.count > 1 ? "1" : modes[0])
             }
-
-            let mostCommon: Character = one >= zero ? "1" : "0"
-
-            for i in (0..<slice.count).reversed()  where slice[i] != mostCommon {
-                oxygenResult.remove(at: i)
-            }
-
-            index += 1
         }
 
-        index = 0
-        while co2Result.count > 1 {
-            var one = 0
-            var zero = 0
+        for index in 0 ..< input[0].count where co2s.count > 1 {
+            let modes = co2s.verticalSlice(index).mode()
 
-            let slice = verticalSlice(array: co2Result, at: index)
-            slice.forEach {
-                ($0 == "0") ? (zero += 1) : (one += 1)
+            co2s = co2s.filter {
+                let least: Character = modes[0] == "0" ? "1": "0"
+                return $0[index] == (modes.count > 1 ? "0" : least)
             }
-
-            let mostCommon: Character = one < zero ? "1" : "0"
-
-            for i in (0..<slice.count).reversed() where slice[i] != mostCommon {
-                co2Result.remove(at: i)
-            }
-
-            index += 1
         }
 
-        guard let oxygen = Int(String(oxygenResult[0]), radix: 2),
-              let co2 = Int(String(co2Result[0]), radix: 2) else         {
-            throw Error.invalidInput
-        }
-
-        return oxygen * co2
-    }
-
-    func verticalSlice<T>(array: [[T]], at index: Int) -> [T] {
-        array.reduce([T](), { $0 + [$1[index]] })
+        return (String(oxygens[0]).binaryAsInt ?? 0) * (String(co2s[0]).binaryAsInt ?? 0)
     }
 }
