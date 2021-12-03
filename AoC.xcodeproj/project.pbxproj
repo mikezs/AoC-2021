@@ -21,6 +21,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		BE030AA1275A6FE700FD986E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE030A9F275A6F7100FD986E /* String+Extension.swift */; };
+		BE030AA4275A721100FD986E /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE030AA2275A720C00FD986E /* Dictionary+Extension.swift */; };
+		BE030AA6275A727200FD986E /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE030AA5275A727200FD986E /* Array+Extension.swift */; };
+		BE030AA8275A729B00FD986E /* String+Regex+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE030AA7275A729B00FD986E /* String+Regex+Extension.swift */; };
+		BE030AAA275A731C00FD986E /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE030AA9275A731C00FD986E /* ArrayExtensionTests.swift */; };
+		BE030AAC275A737200FD986E /* DictionaryExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE030AAB275A737200FD986E /* DictionaryExtensionTests.swift */; };
+		BE030AAE275A7C1A00FD986E /* StringRegexExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE030AAD275A7C1A00FD986E /* StringRegexExtensionTests.swift */; };
 		BE47DE9C27563C4400F653B9 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47DE9B27563C4400F653B9 /* config.swift */; };
 		BE47DEA02757897700F653B9 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = BE47DE9F2757897700F653B9 /* Algorithms */; };
 		OBJ_106 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -53,7 +60,7 @@
 		OBJ_86 /* Day8.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* Day8.swift */; };
 		OBJ_87 /* Day9.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* Day9.swift */; };
 		OBJ_95 /* AoC_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* AoC_Tests.swift */; };
-		OBJ_96 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* ExtensionTests.swift */; };
+		OBJ_96 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* StringExtensionTests.swift */; };
 		OBJ_97 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* XCTestManifests.swift */; };
 		OBJ_99 /* AoCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "AoC::AoCKit::Product" /* AoCKit.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +93,13 @@
 		"AoC::AoC::Product" /* AoC */ = {isa = PBXFileReference; lastKnownFileType = text; path = AoC; sourceTree = BUILT_PRODUCTS_DIR; };
 		"AoC::AoCKit::Product" /* AoCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AoCKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"AoC::AoCKitTests::Product" /* AoCKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AoCKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE030A9F275A6F7100FD986E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		BE030AA2275A720C00FD986E /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		BE030AA5275A727200FD986E /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		BE030AA7275A729B00FD986E /* String+Regex+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Regex+Extension.swift"; sourceTree = "<group>"; };
+		BE030AA9275A731C00FD986E /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
+		BE030AAB275A737200FD986E /* DictionaryExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensionTests.swift; sourceTree = "<group>"; };
+		BE030AAD275A7C1A00FD986E /* StringRegexExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRegexExtensionTests.swift; sourceTree = "<group>"; };
 		BE47DE9B27563C4400F653B9 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		BE47DE9D2756CDF500F653B9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_11 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -115,7 +129,7 @@
 		OBJ_35 /* Day8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day8.swift; sourceTree = "<group>"; };
 		OBJ_36 /* Day9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day9.swift; sourceTree = "<group>"; };
 		OBJ_40 /* AoC_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AoC_Tests.swift; sourceTree = "<group>"; };
-		OBJ_41 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		OBJ_41 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		OBJ_42 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_47 /* Input */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Input; sourceTree = SOURCE_ROOT; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -150,9 +164,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE030A9E275A6F5D00FD986E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BE030A9F275A6F7100FD986E /* String+Extension.swift */,
+				BE030AA2275A720C00FD986E /* Dictionary+Extension.swift */,
+				BE030AA5275A727200FD986E /* Array+Extension.swift */,
+				BE030AA7275A729B00FD986E /* String+Regex+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* AoCKit */ = {
 			isa = PBXGroup;
 			children = (
+				BE030A9E275A6F5D00FD986E /* Extensions */,
 				OBJ_11 /* Day.swift */,
 				OBJ_12 /* Day1.swift */,
 				OBJ_23 /* Day2.swift */,
@@ -196,7 +222,10 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_40 /* AoC_Tests.swift */,
-				OBJ_41 /* ExtensionTests.swift */,
+				OBJ_41 /* StringExtensionTests.swift */,
+				BE030AAB275A737200FD986E /* DictionaryExtensionTests.swift */,
+				BE030AA9275A731C00FD986E /* ArrayExtensionTests.swift */,
+				BE030AAD275A7C1A00FD986E /* StringRegexExtensionTests.swift */,
 				OBJ_42 /* XCTestManifests.swift */,
 			);
 			name = AoCKitTests;
@@ -370,8 +399,10 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_62 /* Day.swift in Sources */,
+				BE030AA6275A727200FD986E /* Array+Extension.swift in Sources */,
 				OBJ_63 /* Day1.swift in Sources */,
 				OBJ_64 /* Day10.swift in Sources */,
+				BE030AA8275A729B00FD986E /* String+Regex+Extension.swift in Sources */,
 				OBJ_65 /* Day11.swift in Sources */,
 				OBJ_66 /* Day12.swift in Sources */,
 				OBJ_67 /* Day13.swift in Sources */,
@@ -384,10 +415,12 @@
 				OBJ_74 /* Day2.swift in Sources */,
 				OBJ_75 /* Day20.swift in Sources */,
 				OBJ_76 /* Day21.swift in Sources */,
+				BE030AA4275A721100FD986E /* Dictionary+Extension.swift in Sources */,
 				OBJ_77 /* Day22.swift in Sources */,
 				OBJ_78 /* Day23.swift in Sources */,
 				OBJ_79 /* Day24.swift in Sources */,
 				OBJ_80 /* Day25.swift in Sources */,
+				BE030AA1275A6FE700FD986E /* String+Extension.swift in Sources */,
 				OBJ_81 /* Day3.swift in Sources */,
 				OBJ_82 /* Day4.swift in Sources */,
 				OBJ_83 /* Day5.swift in Sources */,
@@ -403,8 +436,11 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_95 /* AoC_Tests.swift in Sources */,
-				OBJ_96 /* ExtensionTests.swift in Sources */,
+				BE030AAE275A7C1A00FD986E /* StringRegexExtensionTests.swift in Sources */,
+				OBJ_96 /* StringExtensionTests.swift in Sources */,
 				OBJ_97 /* XCTestManifests.swift in Sources */,
+				BE030AAC275A737200FD986E /* DictionaryExtensionTests.swift in Sources */,
+				BE030AAA275A731C00FD986E /* ArrayExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
