@@ -5,7 +5,7 @@
 
 ## Advent Of Code (AoC) 2021
 
-This are my solutions to the [Advent Of Code 2021](https://adventofcode.com/2021/) event. This year I've been playing along with [timsearle](https://github.com/timsearle/) and [SFrost007](https://github.com/SFrost007/), please check out their solutions if you're interested.
+This are my solutions to the [Advent Of Code 2021](https://adventofcode.com/2021/) event. This year I've been playing along with [timsearle](https://github.com/timsearle/), [SFrost007](https://github.com/SFrost007/) and [ajabero](https://github.com/ajabero/AdventofCode21), please check out their solutions if you're interested.
 
 ### Project approach
 
