@@ -42,3 +42,8 @@ Edit: I went back and added the swift-algorithms package and made a function to 
 
 ### Day 2
 Pretty simple algorithm for today, just split the lines using a space, then added first part and the second part converted to an `Int` to a tuple for looping over and added the algorithm as simple if statements for both parts.
+
+### Day 3
+Quite the step up in difficaulty. I decided to use string manipulation rather than try and use pure binary numbers for speed and keeping the word width the same rather than detecting it.
+
+Part 1 was done really quickly, but for Part 2 I wanted to write some custom array extensions but just decided to quickly smash out a funciton to do it and I might (probably will) come back later to tidy it up and make it re-usable.

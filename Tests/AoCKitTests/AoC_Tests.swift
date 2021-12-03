@@ -84,14 +84,26 @@ forward 2
 
     // MARK: - Day 3
     let day3input = """
+00100
+11110
+10110
+10111
+10101
+01111
+00111
+11100
+10000
+11001
+00010
+01010
 """
 
     func testDay3Part1() {
-        XCTAssertEqual(Day3(input: day3input).part1(), 0)
+        XCTAssertEqual(try Day3(input: day3input).part1(), 198)
     }
 
     func testDay3Part2() {
-        XCTAssertEqual(Day3(input: day3input).part2(), 0)
+        XCTAssertEqual(try Day3(input: day3input).part2(), 230)
     }
 
     // MARK: - Day 4
