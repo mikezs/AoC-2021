@@ -137,7 +137,7 @@ forward 2
     }
 
     func testDay4Part2() {
-        XCTAssertEqual(Day4(input: day4Input).part2(), 0)
+        XCTAssertEqual(Day4(input: day4Input).part2(), 1924)
     }
 
 // MARK: - Day 5

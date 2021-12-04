@@ -26,7 +26,6 @@ public final class Day4: Day {
 
     public func part1() -> Int {
         for number in 0 ..< numbers.count {
-            let currentNumber = numbers[number]
             let drawn = Set(numbers[0...number])
             
             for board in boards {
@@ -49,6 +48,44 @@ public final class Day4: Day {
     }
 
     public func part2() -> Int {
+        var boardsLeft = boards
+        
+        for number in 0 ..< numbers.count {
+            let drawn = Set(numbers[0...number])
+            
+            var i = 0
+            while boardsLeft.count > 0 {
+                let board = boardsLeft[i]
+                
+                for row in (0 ..< board.count).map( {Set(board[$0])}) {
+                    if row.isSubset(of: drawn) {
+                        let unmarkedSum = Set(board.flatMap { $0 }).subtracting(drawn).reduce(0, +)
+                        if boardsLeft.count == 1 {
+                            return unmarkedSum * numbers[number]
+                        } else {
+                            boardsLeft.remove(at: i)
+                        }
+                    }
+                }
+                for column in (0..<board[0].count).map( { Set(board.verticalSlice($0))}) {
+                    if column.isSubset(of: drawn) {
+                        let unmarkedSum = Set(board.flatMap { $0 }).subtracting(drawn).reduce(0, +)
+                        if boardsLeft.count == 1 {
+                            return unmarkedSum * numbers[number]
+                        } else {
+                            boardsLeft.remove(at: i)
+                        }
+                    }
+                }
+                
+                if i >= boardsLeft.count - 1 {
+                    break
+                }
+                
+                i += 1
+            }
+        }
+        
         return 0
     }
 }
