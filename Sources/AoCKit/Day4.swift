@@ -53,36 +53,34 @@ public final class Day4: Day {
         for number in 0 ..< numbers.count {
             let drawn = Set(numbers[0...number])
             
-            var i = 0
-            while boardsLeft.count > 0 {
+            var i = boardsLeft.count - 1
+            
+        boardloop:
+            while i >= 0 {
                 let board = boardsLeft[i]
                 
-                for row in (0 ..< board.count).map( {Set(board[$0])}) {
-                    if row.isSubset(of: drawn) {
+                for row in (0 ..< board.count).map({Set(board[$0])}) where row.isSubset(of: drawn) {
+                    if boardsLeft.count == 1 {
                         let unmarkedSum = Set(board.flatMap { $0 }).subtracting(drawn).reduce(0, +)
-                        if boardsLeft.count == 1 {
-                            return unmarkedSum * numbers[number]
-                        } else {
-                            boardsLeft.remove(at: i)
-                        }
+                        return unmarkedSum * numbers[number]
+                    } else {
+                        boardsLeft.remove(at: i)
+                        i -= 1
+                        continue boardloop
                     }
                 }
-                for column in (0..<board[0].count).map( { Set(board.verticalSlice($0))}) {
-                    if column.isSubset(of: drawn) {
+                for column in (0..<board[0].count).map({ Set(board.verticalSlice($0))}) where column.isSubset(of: drawn) {
+                    if boardsLeft.count == 1 {
                         let unmarkedSum = Set(board.flatMap { $0 }).subtracting(drawn).reduce(0, +)
-                        if boardsLeft.count == 1 {
-                            return unmarkedSum * numbers[number]
-                        } else {
-                            boardsLeft.remove(at: i)
-                        }
+                        return unmarkedSum * numbers[number]
+                    } else {
+                        boardsLeft.remove(at: i)
+                        i -= 1
+                        continue boardloop
                     }
                 }
                 
-                if i >= boardsLeft.count - 1 {
-                    break
-                }
-                
-                i += 1
+                i -= 1
             }
         }
         
