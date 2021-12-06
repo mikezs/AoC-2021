@@ -47,3 +47,18 @@ Pretty simple algorithm for today, just split the lines using a space, then adde
 Quite the step up in difficaulty. I decided to use string manipulation rather than try and use pure binary numbers for speed and keeping the word width the same rather than detecting it.
 
 Part 1 was done really quickly, but for Part 2 I wanted to write some custom array extensions but just decided to quickly smash out a funciton to do it and I might (probably will) come back later to tidy it up and make it re-usable.
+
+### Day 4
+Completed in the back of a [car](https://media.autoexpress.co.uk/image/private/s--CO2gL5rB--/f_auto,t_content-image-full-desktop@2/v1563183731/autoexpress/2018/12/bmw-x5-12.jpg) on the way to a motorbike show. Part 1 was relatively easy to model (I knew my `Array.verticalSlice` funciton would come in handy again), but with part 2 I constantly had the issue where my tests would pass but with my asnwer was wrong :(. Got there in the end though!
+
+### Day 5
+Part 1 solution was easy, and I got to use the function that I've been wanting to use; [`signum`](https://developer.apple.com/documentation/swift/int/2886673-signum) (signed number denoting positive, negative or none) and I also got to use the [`stride`](https://developer.apple.com/documentation/swift/1641347-stride) function to loop backwards through a sequence of numbers.
+
+Part 2 required diagonals to be added, so needed to make a solution to part 1 that also included vectors that changed both axis' for each position change. Although the solution was quite straightforward, I was distracted while implementing so it took me lots of iterations to finally get it right.
+
+I'd like to refactor this to use a solution that [I saw on reddit](https://www.reddit.com/r/adventofcode/comments/r9824c/comment/hnagkga/) which I think would make it only a couple of lines and still be easy to understand.
+
+### Day 6
+Part 1 was the basic "model it as an `Int` array like in the worked example". Whipped it up in 5 minutes and ran it, great. Part 2 of "run it loads more times" I ran as release and went and made breakfast, but obviously this is designed to not complete in a sensible time.
+
+I could think of 2 ways to complete this in an optimal way: The number of each fish's replications can be calculated, and then the replications of those, and so on in a recursive function. The way that I chose was to model each day with the number of fish that were currently in that state, which meant that I only had to really care about the numbers of fish on day 0 and add their total to day 6 and set this for day 8. This completed really fast and was quite easy to understand.
