@@ -17,15 +17,15 @@ public final class Day6: Day {
             daysRemaining[$0] += 1
         }
 
-        for _ in 1...days {
+        (1...days).forEach { _ in
             var newDaysRemaining = daysRemaining
 
             (1...8).forEach {
                 newDaysRemaining[$0 - 1] = daysRemaining[$0]
             }
 
-            newDaysRemaining[6] += daysRemaining[0]
             newDaysRemaining[8] = daysRemaining[0]
+            newDaysRemaining[6] += daysRemaining[0]
 
             daysRemaining = newDaysRemaining
         }
@@ -34,28 +34,7 @@ public final class Day6: Day {
     }
 
     public func part1() -> Int {
-        var state = input
-
-        for count in 0..<80 {
-            var newFish = 0
-            var newState = state
-
-            for (index, age) in state.enumerated() {
-                if age == 0 {
-                    newFish += 1
-                    newState[index] = 6
-                } else {
-                    newState[index] -= 1
-                }
-            }
-
-            state = newState
-
-            state += [Int](repeating: 8, count: newFish)
-            print(count)
-        }
-
-        return state.count
+        calculate(days: 80)
     }
 
     public func part2() -> Int {
