@@ -164,14 +164,15 @@ forward 2
 
     // MARK: - Day 6
     let day6Input = """
+3,4,3,1,2
 """
 
     func testDay6Part1() {
-        XCTAssertEqual(Day6(input: day6Input).part1(), 0)
+        XCTAssertEqual(Day6(input: day6Input).part1(), 5934)
     }
 
     func testDay6Part2() {
-        XCTAssertEqual(Day6(input: day6Input).part2(), 0)
+        XCTAssertEqual(Day6(input: day6Input).part2(), 26_984_457_539)
     }
 
     // MARK: - Day 7
