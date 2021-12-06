@@ -13,21 +13,12 @@ public final class Day6: Day {
     public func calculate(days: Int) -> Int {
         var daysRemaining = [Int](repeating: 0, count: 9)
 
-        input.forEach {
-            daysRemaining[$0] += 1
-        }
+        input.forEach { daysRemaining[$0] += 1 }
 
         (1...days).forEach { _ in
-            var newDaysRemaining = daysRemaining
-
-            (1...8).forEach {
-                newDaysRemaining[$0 - 1] = daysRemaining[$0]
-            }
-
-            newDaysRemaining[8] = daysRemaining[0]
-            newDaysRemaining[6] += daysRemaining[0]
-
-            daysRemaining = newDaysRemaining
+            let newFish = daysRemaining.remove(at: 0)
+            daysRemaining.append(newFish)
+            daysRemaining[6] += newFish
         }
 
         return daysRemaining.reduce(0, +)
