@@ -4,10 +4,7 @@ public final class Day7: Day {
     let input: [Int]
 
     public init(input: String) {
-        self.input = input
-            .trimmingCharacters(in: .newlines)
-            .components(separatedBy: ",")
-            .compactMap { Int($0) }
+        self.input = input.commaSeparatedInts
     }
 
     public func part1() -> Int {
