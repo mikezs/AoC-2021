@@ -92,7 +92,7 @@
 /* Begin PBXFileReference section */
 		"AoC::AoC::Product" /* AoC */ = {isa = PBXFileReference; lastKnownFileType = text; path = AoC; sourceTree = BUILT_PRODUCTS_DIR; };
 		"AoC::AoCKit::Product" /* AoCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AoCKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"AoC::AoCKitTests::Product" /* AoCKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AoCKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"AoC::AoCKitTests::Product" /* AoCKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = AoCKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE030A9F275A6F7100FD986E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		BE030AA2275A720C00FD986E /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		BE030AA5275A727200FD986E /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -696,7 +696,7 @@
 					"@loader_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -727,7 +727,7 @@
 					"@loader_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
