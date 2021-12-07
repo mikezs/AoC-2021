@@ -65,3 +65,5 @@ I could think of 2 ways to complete this in an optimal way: The number of each f
 
 ### Day 7
 Managed to do a full functional chain for both parts from the start. Part 1 was relatively straightfoward but my part 2 is not optimal and takes a couple of seconds on release. I need to calculate/cache the sums of the numbers in an efficient way and then look them up when doing the loop
+
+Edit: Implemented the cached sums and it now part 2 runs as fast as part 1
