@@ -3,6 +3,7 @@ import Foundation
 extension String {
     var trimmedLines: [String] { trimmingCharacters(in: .newlines).components(separatedBy: .newlines) }
     var trimmedInts: [Int] { trimmedLines.compactMap { Int($0) } }
+    var commaSeparatedInts: [Int] { trimmingCharacters(in: .newlines).components(separatedBy: ",").compactMap { Int($0) } }
 }
 
 extension String {

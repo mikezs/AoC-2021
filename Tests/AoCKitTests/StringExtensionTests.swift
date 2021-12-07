@@ -19,6 +19,13 @@ three
 """
         XCTAssertEqual(lines.trimmedInts, [1, 2, 3])
     }
+    
+    func testCommaSeparatedInts() {
+        let line = """
+1,2,3,4,5
+"""
+        XCTAssertEqual(line.commaSeparatedInts, [1, 2, 3, 4, 5])
+    }
 
     func testBinaryAsInt() {
         XCTAssertEqual("11111111".binaryAsInt, 255)
