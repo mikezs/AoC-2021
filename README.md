@@ -62,3 +62,6 @@ I'd like to refactor this to use a solution that [I saw on reddit](https://www.r
 Part 1 was the basic "model it as an `Int` array like in the worked example". Whipped it up in 5 minutes and ran it, great. Part 2 of "run it loads more times" I ran as release and went and made breakfast, but obviously this is designed to not complete in a sensible time.
 
 I could think of 2 ways to complete this in an optimal way: The number of each fish's replications can be calculated, and then the replications of those, and so on in a recursive function. The way that I chose was to model each day with the number of fish that were currently in that state, which meant that I only had to really care about the numbers of fish on day 0 and add their total to day 6 and set this for day 8. This completed really fast and was quite easy to understand.
+
+### Day 7
+Managed to do a full functional chain for both parts from the start. Part 1 was relatively straightfoward but my part 2 is not optimal and takes a couple of seconds on release. I need to calculate/cache the sums of the numbers in an efficient way and then look them up when doing the loop
