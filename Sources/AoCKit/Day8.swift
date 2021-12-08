@@ -1,14 +1,19 @@
 import Foundation
 
 public final class Day8: Day {
-    let input: [Int]
+    let input: [([String], [String])]
 
     public init(input: String) {
-        self.input = input.trimmedLines.compactMap { Int($0) }
+        self.input = input.trimmedLines.map {
+            let parts = $0.components(separatedBy: " | ")
+            return (parts[0].components(separatedBy: .whitespaces), parts[1].components(separatedBy: .whitespaces))
+        }
     }
 
     public func part1() -> Int {
-        return 0
+        input
+            .map { $0.1.filter { [2, 3, 4, 7].contains($0.count) }.count }
+            .reduce(0, +)
     }
 
     public func part2() -> Int {
