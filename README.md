@@ -70,3 +70,5 @@ Edit: Implemented the cached sums and it now part 2 runs as fast as part 1
 
 ### Day 8
 First part was easy to write out, but the second part was a really good logic problem that required lots of thinking. I modelled it with Sets of characters so I didn't have to worry about ordering and I could quickly produce the logic. Happy with my solution first time. Don't think I need to refactor it at all!
+
+Edit: *Narrator:* He went back and refactored it.

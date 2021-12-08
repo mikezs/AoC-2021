@@ -20,45 +20,42 @@ public final class Day8: Day {
         var total = 0
 
         for line in input {
-            let one: Set<Character> = Set(line.0.filter { $0.count == 2 }.first!)
-            let seven: Set<Character> = Set(line.0.filter { $0.count == 3 }.first!)
-            let four: Set<Character> = Set(line.0.filter { $0.count == 4 }.first!)
-            let eight: Set<Character> = Set(line.0.filter { $0.count == 7 }.first!)
+            var chars = [Set<Character>](repeating: [], count: 10)
 
-            var fiveSegment: [Set<Character>] = line.0.filter { $0.count == 5 }.map { Set($0) }
-            var sixSegment: [Set<Character>] = line.0.filter { $0.count == 6 }.map { Set($0) }
+            chars[1] = Set(line.0.first { $0.count == 2 }!)
+            chars[4] = Set(line.0.first { $0.count == 4 }!)
+            chars[7] = Set(line.0.first { $0.count == 3 }!)
+            chars[8] = Set(line.0.first { $0.count == 7 }!)
 
-            let nine: Set<Character> = sixSegment.filter { four.isSubset(of: $0) }.first!
-            sixSegment.removeAll { $0 == nine }
-            let two: Set<Character> = fiveSegment.filter { !Set($0).isSubset(of: nine) }.first!
-            fiveSegment.removeAll { $0 == two }
+            var fiveSegment = line.0.filter { $0.count == 5 }.map { Set($0) }
+            var sixSegment = line.0.filter { $0.count == 6 }.map { Set($0) }
 
-            let zero: Set<Character> = sixSegment.filter { $0.subtracting(one).count == 4 }.first!
-            let six: Set<Character> = sixSegment.filter { $0.subtracting(one).count == 5 }.first!
+            chars[9] = sixSegment.first { chars[4] < $0 }!
+            sixSegment.removeAll { $0 == chars[9] }
 
-            let three: Set<Character> = fiveSegment.filter { $0.subtracting(one).count == 3 }.first!
-            let five: Set<Character> = fiveSegment.filter { $0.subtracting(one).count == 4 }.first!
+            chars[2] = fiveSegment.first { !($0 < chars[9]) }!
+            fiveSegment.removeAll { $0 == chars[2] }
 
-            var result = ""
+            chars[3] = fiveSegment.first { ($0 - chars[1]).count == 3 }!
+            chars[5] = fiveSegment.first { ($0 - chars[1]).count == 4 }!
+            chars[0] = sixSegment.first { ($0 - chars[1]).count == 4 }!
+            chars[6] = sixSegment.first { ($0 - chars[1]).count == 5 }!
 
-            for digit in line.1 {
-                let set: Set<Character> = Set(digit)
-
-                if one == set { result += "1" }
-                else if two == set { result += "2" }
-                else if three == set { result += "3" }
-                else if four == set { result += "4" }
-                else if five == set { result += "5" }
-                else if six == set { result += "6" }
-                else if seven == set { result += "7" }
-                else if eight == set { result += "8" }
-                else if nine == set { result += "9" }
-                else if zero == set { result += "0" }
-            }
-
-            total += Int(result)!
+            total += Int(line.1
+                .map { Set($0) }
+                .compactMap { seg in chars.firstIndex(where: { seg == $0 }) }
+                .reduce("") { "\($0)\($1)" })!
         }
 
         return total
+    }
+}
+
+fileprivate extension Set {
+    static func -(lhs: Set, rhs: Set) -> Set {
+        return lhs.subtracting(rhs)
+    }
+    static func <(lhs: Set, rhs: Set) -> Bool {
+        return lhs.isSubset(of: rhs)
     }
 }
