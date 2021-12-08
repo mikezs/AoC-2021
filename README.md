@@ -67,3 +67,6 @@ I could think of 2 ways to complete this in an optimal way: The number of each f
 Managed to do a full functional chain for both parts from the start. Part 1 was relatively straightfoward but my part 2 is not optimal and takes a couple of seconds on release. I need to calculate/cache the sums of the numbers in an efficient way and then look them up when doing the loop
 
 Edit: Implemented the cached sums and it now part 2 runs as fast as part 1
+
+### Day 8
+First part was easy to write out, but the second part was a really good logic problem that required lots of thinking. I modelled it with Sets of characters so I didn't have to worry about ordering and I could quickly produce the logic. Happy with my solution first time. Don't think I need to refactor it at all!

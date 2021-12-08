@@ -207,7 +207,18 @@ gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
     }
 
     func testDay8Part2() {
-        XCTAssertEqual(Day8(input: day8Input).part2(), 0)
+        XCTAssertEqual(Day8(input: "acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab | cdfeb fcadb cdfeb cdbaf").part2(), 5353)
+        XCTAssertEqual(Day8(input: "be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb | fdgacbe cefdb cefbgd gcbe").part2(), 8394)
+        XCTAssertEqual(Day8(input: "edbfga begcd cbg gc gcadebf fbgde acbgfd abcde gfcbed gfec | fcgedb cgb dgebacf gc").part2(), 9781)
+        XCTAssertEqual(Day8(input: "fgaebd cg bdaec gdafb agbcfd gdcbef bgcad gfac gcb cdgabef | cg cg fdcagb cbg").part2(), 1197)
+        XCTAssertEqual(Day8(input: "fbegcd cbd adcefb dageb afcb bc aefdc ecdab fgdeca fcdbega | efabcd cedba gadfec cb").part2(), 9361)
+        XCTAssertEqual(Day8(input: "aecbfdg fbg gf bafeg dbefa fcge gcbea fcaegb dgceab fcbdga | gecf egdcabf bgf bfgea").part2(), 4873)
+        XCTAssertEqual(Day8(input: "fgeab ca afcebg bdacfeg cfaedg gcfdb baec bfadeg bafgc acf | gebdcfa ecba ca fadegcb").part2(), 8418)
+        XCTAssertEqual(Day8(input: "dbcfg fgd bdegcaf fgec aegbdf ecdfab fbedc dacgb gdcebf gf | cefg dcbef fcge gbcadfe").part2(), 4548)
+        XCTAssertEqual(Day8(input: "bdfegc cbegaf gecbf dfcage bdacg ed bedf ced adcbefg gebcd | ed bcgafe cdgba cbgef").part2(), 1625)
+        XCTAssertEqual(Day8(input: "egadfb cdbfeg cegd fecab cgb gbdefca cg fgcdab egfdb bfceg | gbdfcae bgc cg cgb").part2(), 8717)
+        XCTAssertEqual(Day8(input: "gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce").part2(), 4315)
+        XCTAssertEqual(Day8(input: day8Input).part2(), 61229)
     }
 
     // MARK: - Day 9
