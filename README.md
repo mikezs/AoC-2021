@@ -72,3 +72,8 @@ Edit: Implemented the cached sums and it now part 2 runs as fast as part 1
 First part was easy to write out, but the second part was a really good logic problem that required lots of thinking. I modelled it with Sets of characters so I didn't have to worry about ordering and I could quickly produce the logic. Happy with my solution first time. Don't think I need to refactor it at all!
 
 Edit: *Narrator:* He went back and refactored it.
+
+### Day 9
+Easy first part, although I think my algorithm for calculating it was actually just lucky that it got the right answer because when I tried to use the same logic in part 2 I realised I was checking the diagonals as well as the adjacents.
+
+Part 2 meant re-writing most of the parts to part 1 so they could be re-used. Simplified and optimised (and corrected) the adjacent positions function and then used the `inout` declaration on my `basin` array so I could use the Swift value type as a reference type. I want to try and refactor some of my loops into functional chains, but I ran out of time.
