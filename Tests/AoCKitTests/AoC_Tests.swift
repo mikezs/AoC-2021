@@ -223,10 +223,15 @@ gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
 
     // MARK: - Day 9
     let day9Input = """
+2199943210
+3987894921
+9856789892
+8767896789
+9899965678
 """
 
     func testDay9Part1() {
-        XCTAssertEqual(Day9(input: day9Input).part1(), 0)
+        XCTAssertEqual(Day9(input: day9Input).part1(), 15)
     }
 
     func testDay9Part2() {
