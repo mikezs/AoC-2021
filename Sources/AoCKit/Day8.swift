@@ -52,10 +52,10 @@ public final class Day8: Day {
 }
 
 fileprivate extension Set {
-    static func -(lhs: Set, rhs: Set) -> Set {
+    static func - (lhs: Set, rhs: Set) -> Set {
         return lhs.subtracting(rhs)
     }
-    static func <(lhs: Set, rhs: Set) -> Bool {
+    static func < (lhs: Set, rhs: Set) -> Bool {
         return lhs.isSubset(of: rhs)
     }
 }

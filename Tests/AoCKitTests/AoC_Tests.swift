@@ -5,6 +5,7 @@ import class Foundation.Bundle
 final class AoCTests: XCTestCase {
     static let expectedError = "Expected error to be thrown"
     static let invalidError = "Invalid error thrown"
+    static let expectedIlligalCharacter = "Expected illigal character"
 
     // MARK: - Day 1
     let day1Input = """
@@ -260,35 +261,35 @@ gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
 
         XCTAssertThrowsError(try Day10.remaining(of: "{([(<{}[<>[]}>{[]{[(<()>".map { $0 })) { error in
             guard case let Day10.Error.illigalCharacter(char) = error else {
-                XCTFail("Expected illigal character")
+                XCTFail(AoCTests.expectedIlligalCharacter)
                 return
             }
             XCTAssertEqual(char, "}")
         }
         XCTAssertThrowsError(try Day10.remaining(of: "[[<[([]))<([[{}[[()]]]".map { $0 })) { error in
             guard case let Day10.Error.illigalCharacter(char) = error else {
-                XCTFail("Expected illigal character")
+                XCTFail(AoCTests.expectedIlligalCharacter)
                 return
             }
             XCTAssertEqual(char, ")")
         }
         XCTAssertThrowsError(try Day10.remaining(of: "[{[{({}]{}}([{[{{{}}([]".map { $0 })) { error in
             guard case let Day10.Error.illigalCharacter(char) = error else {
-                XCTFail("Expected illigal character")
+                XCTFail(AoCTests.expectedIlligalCharacter)
                 return
             }
             XCTAssertEqual(char, "]")
         }
         XCTAssertThrowsError(try Day10.remaining(of: "<(<(<(<{}))><([]([]()".map { $0 })) { error in
             guard case let Day10.Error.illigalCharacter(char) = error else {
-                XCTFail("Expected illigal character")
+                XCTFail(AoCTests.expectedIlligalCharacter)
                 return
             }
             XCTAssertEqual(char, ")")
         }
         XCTAssertThrowsError(try Day10.remaining(of: "<{([([[(<>()){}]>(<<{{".map { $0 })) { error in
             guard case let Day10.Error.illigalCharacter(char) = error else {
-                XCTFail("Expected illigal character")
+                XCTFail(AoCTests.expectedIlligalCharacter)
                 return
             }
             XCTAssertEqual(char, ">")

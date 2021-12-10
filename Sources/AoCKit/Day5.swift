@@ -41,10 +41,6 @@ public final class Day5: Day {
             }
         }
         
-//        for y in grid {
-//            print(y.map { String($0) }.joined())
-//        }
-        
         return grid
             .flatMap { $0 }
             .filter { $0 > 1 }
@@ -73,10 +69,6 @@ public final class Day5: Day {
                 grid[y][x] += 1
             }
         }
-        
-//        for y in grid {
-//            print(y.map { String($0).replacingOccurrences(of: "0", with: ".") }.joined())
-//        }
         
         return grid
             .flatMap { $0 }

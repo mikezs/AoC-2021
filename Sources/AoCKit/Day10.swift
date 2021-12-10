@@ -22,18 +22,18 @@ public final class Day10: Day {
     static func remaining(of line: [Character]) throws -> [Character] {
         try line
             .reduce([Character](), {
-                let result: [Character]?
+                let possibleResult: [Character]?
 
                 switch $1 {
-                case "(", "[", "{", "<": result = $0 + [$1]
-                case ")": result = $0.removing(last: "(")
-                case "]": result = $0.removing(last: "[")
-                case "}": result = $0.removing(last: "{")
-                case ">": result = $0.removing(last: "<")
+                case "(", "[", "{", "<": possibleResult = $0 + [$1]
+                case ")": possibleResult = $0.removing(last: "(")
+                case "]": possibleResult = $0.removing(last: "[")
+                case "}": possibleResult = $0.removing(last: "{")
+                case ">": possibleResult = $0.removing(last: "<")
                 default: throw Error.unrecognizedCharacter
                 }
 
-                guard let result = result else { throw Error.illigalCharacter($1) }
+                guard let result = possibleResult else { throw Error.illigalCharacter($1) }
                 return result
             })
     }
