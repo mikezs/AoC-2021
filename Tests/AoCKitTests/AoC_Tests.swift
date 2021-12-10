@@ -251,6 +251,50 @@ gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
 <{([{{}}[<[[[<>{}]]]>[]]
 """
 
+    func testDay10Remaining() {
+        XCTAssertEqual(try Day10.remaining(of: "[({(<(())[]>[[{[]{<()<>>".map { $0 }), ["[", "(", "{", "(", "[", "[", "{", "{"])
+        XCTAssertEqual(try Day10.remaining(of: "[(()[<>])]({[<{<<[]>>(".map { $0 }), ["(", "{", "[", "<", "{", "("])
+        XCTAssertEqual(try Day10.remaining(of: "(((({<>}<{<{<>}{[]{[]{}".map { $0 }), ["(", "(", "(", "(", "<", "{", "<", "{", "{"])
+        XCTAssertEqual(try Day10.remaining(of: "{<[[]]>}<{[{[{[]{()[[[]".map { $0 }), ["<", "{", "[", "{", "[", "{", "{", "[", "["])
+        XCTAssertEqual(try Day10.remaining(of: "<{([{{}}[<[[[<>{}]]]>[]]".map { $0 }), ["<", "{", "(", "["])
+
+        XCTAssertThrowsError(try Day10.remaining(of: "{([(<{}[<>[]}>{[]{[(<()>".map { $0 })) { error in
+            guard case let Day10.Error.illigalCharacter(char) = error else {
+                XCTFail("Expected illigal character")
+                return
+            }
+            XCTAssertEqual(char, "}")
+        }
+        XCTAssertThrowsError(try Day10.remaining(of: "[[<[([]))<([[{}[[()]]]".map { $0 })) { error in
+            guard case let Day10.Error.illigalCharacter(char) = error else {
+                XCTFail("Expected illigal character")
+                return
+            }
+            XCTAssertEqual(char, ")")
+        }
+        XCTAssertThrowsError(try Day10.remaining(of: "[{[{({}]{}}([{[{{{}}([]".map { $0 })) { error in
+            guard case let Day10.Error.illigalCharacter(char) = error else {
+                XCTFail("Expected illigal character")
+                return
+            }
+            XCTAssertEqual(char, "]")
+        }
+        XCTAssertThrowsError(try Day10.remaining(of: "<(<(<(<{}))><([]([]()".map { $0 })) { error in
+            guard case let Day10.Error.illigalCharacter(char) = error else {
+                XCTFail("Expected illigal character")
+                return
+            }
+            XCTAssertEqual(char, ")")
+        }
+        XCTAssertThrowsError(try Day10.remaining(of: "<{([([[(<>()){}]>(<<{{".map { $0 })) { error in
+            guard case let Day10.Error.illigalCharacter(char) = error else {
+                XCTFail("Expected illigal character")
+                return
+            }
+            XCTAssertEqual(char, ">")
+        }
+    }
+
     func testDay10Part1() {
         XCTAssertEqual(Day10(input: day10Input).part1(), 26397)
     }

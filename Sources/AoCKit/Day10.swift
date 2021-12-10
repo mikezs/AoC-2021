@@ -1,7 +1,15 @@
 import Foundation
 
+private extension Array where Element: Equatable {
+    /// Returns array with last element removed if it matches `last`, nil otherwise
+    func removing(last item: Element) -> [Element]? {
+        last == item ? Array(prefix(upTo: count - 1)) : nil
+    }
+}
+
 public final class Day10: Day {
     enum Error: Swift.Error {
+        case unrecognizedCharacter
         case illigalCharacter(Character)
     }
 
@@ -11,89 +19,76 @@ public final class Day10: Day {
         self.input = input.trimmedLines.map { $0.map { $0 } }
     }
 
-    func remaining(of line: [Character]) throws -> [Character] {
-        var stack = [Character]()
+    static func remaining(of line: [Character]) throws -> [Character] {
+        try line
+            .reduce([Character](), {
+                let result: [Character]?
 
-        for char in line {
-            switch char {
-            case ")":
-                if stack.last != "(" {
-                    throw Error.illigalCharacter(char)
-                } else {
-                    stack.removeLast()
+                switch $1 {
+                case "(", "[", "{", "<": result = $0 + [$1]
+                case ")": result = $0.removing(last: "(")
+                case "]": result = $0.removing(last: "[")
+                case "}": result = $0.removing(last: "{")
+                case ">": result = $0.removing(last: "<")
+                default: throw Error.unrecognizedCharacter
                 }
-            case "]":
-                if stack.last != "[" {
-                    throw Error.illigalCharacter(char)
-                } else {
-                    stack.removeLast()
-                }
-            case "}":
-                if stack.last != "{" {
-                    throw Error.illigalCharacter(char)
-                } else {
-                    stack.removeLast()
-                }
-            case ">":
-                if stack.last != "<" {
-                    throw Error.illigalCharacter(char)
-                } else {
-                    stack.removeLast()
-                }
-            case "(", "[", "{", "<": stack.append(char)
-            default: return []
-            }
-        }
 
-        return stack
+                guard let result = result else { throw Error.illigalCharacter($1) }
+                return result
+            })
     }
 
     public func part1() -> Int {
-        var illigals = [Character]()
+        input
+            .compactMap { line -> Character? in
+                do {
+                    _ = try Day10.remaining(of: line)
+                } catch let Error.illigalCharacter(char) {
+                    return char
+                } catch {
+                    return nil
+                }
 
-        for line in input {
-            do {
-                _ = try remaining(of: line)
-            } catch let Error.illigalCharacter(char) {
-                illigals.append(char)
-            } catch {
-                return 0
+                return nil
             }
-        }
-
-        return illigals.map {
-            switch $0 {
-            case ")": return 3
-            case "]": return 57
-            case "}": return 1197
-            case ">": return 25137
-            default: return 0
+            .map {
+                switch $0 {
+                case ")": return 3
+                case "]": return 57
+                case "}": return 1197
+                case ">": return 25137
+                default: return 0
+                }
             }
-        }.reduce(0, +)
+            .reduce(0, +)
     }
 
     public func part2() -> Int {
         let incompleteLines = input
-            .compactMap { try? remaining(of: $0) }
+            .compactMap { try? Day10.remaining(of: $0) }
             .filter { !$0.isEmpty }
             .map {
-                $0.reversed().map { char -> Character in
-                    if char == "(" { return ")" } else
-                    if char == "[" { return "]" } else
-                    if char == "{" { return "}" } else
-                    if char == "<" { return ">" } else
-                    { return " " }
-                }
+                $0
+                    .reversed()
+                    .map { char -> Character in
+                        switch char {
+                        case "(": return ")"
+                        case "[": return "]"
+                        case "{": return "}"
+                        case "<": return ">"
+                        default: return " "
+                        }
+                    }
             }
             .map { line -> Int in
-                line.reduce(0, { ($0 * 5) + score(for: $1) })
+                line.reduce(0, { ($0 * 5) + Day10.score(for: $1) })
             }
             .sorted()
 
         return incompleteLines[incompleteLines.count / 2]
     }
 
-    func score(for char: Character) -> Int {
+    static func score(for char: Character) -> Int {
         ([")","]","}",">"].firstIndex(of: char) ?? -1) + 1
     }
 }

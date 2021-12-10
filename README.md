@@ -86,3 +86,5 @@ For my part 1 answer I wrote a function that returned the unclosed parts of inco
 Success! I `map`ed and `filter`ed the lines to just leave me with the incomplete chunks, `reversed` each one and mapped the `Character` to what it should have been and then `map`ed them again to their score. Then I sorted them, found the middle using integer rounding. I had a scoring issue first time round (maybe I should wear my glasses more?)  but after a quick debug seeing my scores were off by a few hundred rather than crazy values I checked that logic and fixed it.
 
 There's definitely room for some better coding because I copied/pasted the `if`s in the `switch` statements so might go back and fix those. 
+
+Edit: Using TDR (test-driven refactoring, where you write tests using results of working code with the view of getting the same output) I made more (just about readable) functional chains.
