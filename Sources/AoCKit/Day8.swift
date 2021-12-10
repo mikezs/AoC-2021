@@ -33,7 +33,7 @@ public final class Day8: Day {
             chars[9] = sixSegment.first { chars[4] < $0 }!
             sixSegment.removeAll { $0 == chars[9] }
 
-            chars[2] = fiveSegment.first { !($0 < chars[9]) }!
+            chars[2] = fiveSegment.first { $0 !< chars[9] }!
             fiveSegment.removeAll { $0 == chars[2] }
 
             chars[3] = fiveSegment.first { ($0 - chars[1]).count == 3 }!
@@ -51,11 +51,16 @@ public final class Day8: Day {
     }
 }
 
-fileprivate extension Set {
+infix operator !< : AdditionPrecedence
+
+extension Set {
     static func - (lhs: Set, rhs: Set) -> Set {
-        return lhs.subtracting(rhs)
+        lhs.subtracting(rhs)
     }
     static func < (lhs: Set, rhs: Set) -> Bool {
-        return lhs.isSubset(of: rhs)
+        lhs.isSubset(of: rhs)
+    }
+    static func !< (lhs: Set, rhs: Set) -> Bool {
+        !lhs.isSubset(of: rhs)
     }
 }

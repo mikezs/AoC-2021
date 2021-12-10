@@ -19,7 +19,7 @@ public final class Day4: Day {
                 $0
                     .components(separatedBy: .newlines)
                     .map {
-                        $0.components(separatedBy: .whitespaces).compactMap { Int($0) }
+                        $0.components(separatedBy: .whitespaces).compactMap(Int.init)
                     }
             }
     }
@@ -29,17 +29,13 @@ public final class Day4: Day {
             let drawn = Set(numbers[0...number])
             
             for board in boards {
-                for row in (0 ..< board.count).map( {Set(board[$0])}) {
-                    if row.isSubset(of: drawn) {
-                        let unmarkedSum = Set(board.flatMap { $0 }).subtracting(drawn).reduce(0, +)
-                        return unmarkedSum * numbers[number]
-                    }
+                for row in (0 ..< board.count).map( {Set(board[$0])}) where row.isSubset(of: drawn) {
+                    let unmarkedSum = Set(board.flatMap { $0 }).subtracting(drawn).reduce(0, +)
+                    return unmarkedSum * numbers[number]
                 }
-                for column in (0..<board[0].count).map( { Set(board.verticalSlice($0))}) {
-                    if column.isSubset(of: drawn) {
-                        let unmarkedSum = Set(board.flatMap { $0 }).subtracting(drawn).reduce(0, +)
-                        return unmarkedSum * numbers[number]
-                    }
+                for column in (0..<board[0].count).map( { Set(board.verticalSlice($0))}) where column.isSubset(of: drawn) {
+                    let unmarkedSum = Set(board.flatMap { $0 }).subtracting(drawn).reduce(0, +)
+                    return unmarkedSum * numbers[number]
                 }
             }
         }
