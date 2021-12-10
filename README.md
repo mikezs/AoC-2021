@@ -77,3 +77,12 @@ Edit: *Narrator:* He went back and refactored it.
 Easy first part, although I think my algorithm for calculating it was actually just lucky that it got the right answer because when I tried to use the same logic in part 2 I realised I was checking the diagonals as well as the adjacents.
 
 Part 2 meant re-writing most of the parts to part 1 so they could be re-used. Simplified and optimised (and corrected) the adjacent positions function and then used the `inout` declaration on my `basin` array so I could use the Swift value type as a reference type. I want to try and refactor some of my loops into functional chains, but I ran out of time.
+
+### Day 10
+Seeing this question made me want to bring out one of my most loved tools in programming: Regular expressions, however I quickly realised we needed a stack, so *sadly* used one of these instead.
+
+For my part 1 answer I wrote a function that returned the unclosed parts of incomplete lines ("Some of the lines aren't corrupted, just incomplete; you can ignore these lines **for now**.") and threw an exception with the illigal character. This allowed me to easily solve part 1 and took a chance that we'd be finishing off the lines in part 2
+
+Success! I `map`ed and `filter`ed the lines to just leave me with the incomplete chunks, `reversed` each one and mapped the `Character` to what it should have been and then `map`ed them again to their score. Then I sorted them, found the middle using integer rounding. I had a scoring issue first time round (maybe I should wear my glasses more?)  but after a quick debug seeing my scores were off by a few hundred rather than crazy values I checked that logic and fixed it.
+
+There's definitely room for some better coding because I copied/pasted the `if`s in the `switch` statements so might go back and fix those. 

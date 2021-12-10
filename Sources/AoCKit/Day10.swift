@@ -73,6 +73,27 @@ public final class Day10: Day {
     }
 
     public func part2() -> Int {
-        return 0
+        let incompleteLines = input
+            .compactMap { try? remaining(of: $0) }
+            .filter { !$0.isEmpty }
+            .map {
+                $0.reversed().map { char -> Character in
+                    if char == "(" { return ")" } else
+                    if char == "[" { return "]" } else
+                    if char == "{" { return "}" } else
+                    if char == "<" { return ">" } else
+                    { return " " }
+                }
+            }
+            .map { line -> Int in
+                line.reduce(0, { ($0 * 5) + score(for: $1) })
+            }
+            .sorted()
+
+        return incompleteLines[incompleteLines.count / 2]
+    }
+
+    func score(for char: Character) -> Int {
+        ([")","]","}",">"].firstIndex(of: char) ?? -1) + 1
     }
 }

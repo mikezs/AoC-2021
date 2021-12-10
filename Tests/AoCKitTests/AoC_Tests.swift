@@ -256,7 +256,7 @@ gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
     }
 
     func testDay10Part2() {
-        XCTAssertEqual(Day10(input: day10Input).part2(), 0)
+        XCTAssertEqual(Day10(input: day10Input).part2(), 288957)
     }
 
     let day11Input = """
