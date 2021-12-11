@@ -22,24 +22,23 @@ public final class Day11: Day {
     }
 
     func iterationFlashes(cavern: inout [[Int]]) -> Int {
-        var flashes = 0
-
-        for (x, y) in product(0..<cavern[0].count, 0..<cavern.count) {
-            cavern[y][x] += 1
-        }
+        product(0..<cavern[0].count, 0..<cavern.count)
+            .forEach { cavern[$0.1][$0.0] += 1 }
 
         let afterRound = cavern
-        for (x, y) in product(0..<afterRound[0].count, 0..<afterRound.count) where afterRound[y][x] >= 10 {
-            Day11.flash(x: x, y: y, cavern: &cavern)
-        }
 
-        for (x, y) in product(0..<cavern[0].count, 0..<cavern.count) where cavern[y][x] >= 10 {
-            flashes += 1
-            cavern[y][x] = 0
-        }
+        product(0..<afterRound[0].count, 0..<afterRound.count)
+            .filter { afterRound[$0.1][$0.0] >= 10 }
+            .forEach { Day11.flash(x: $0.0, y: $0.1, cavern: &cavern) }
 
-        return flashes
+        return product(0..<cavern[0].count, 0..<cavern.count)
+            .filter { cavern[$0.1][$0.0] >= 10 }
+            .reduce(0) {
+                cavern[$1.1][$1.0] = 0
+                return $0 + 1
+            }
     }
+
     public func part1() -> Int {
         var cavern = input
 
