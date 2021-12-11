@@ -9,13 +9,16 @@ public final class Day11: Day {
     }
 
     static func flash(x: Int, y: Int, cavern: inout [[Int]]) {
-        for (dx, dy) in product(-1...1, -1...1) where x+dx >= 0 && x+dx < cavern[0].count && y+dy >= 0 && y+dy < cavern.count {
-            cavern[y+dy][x+dx] += 1
+        product(-1...1, -1...1)
+            .filter { dx, _ in x+dx >= 0 && x+dx < cavern[0].count }
+            .filter { _, dy in y+dy >= 0 && y+dy < cavern.count }
+            .forEach { dx, dy in
+                cavern[y+dy][x+dx] += 1
 
-            if cavern[y+dy][x+dx] == 10 {
-                flash(x: x+dx, y: y+dy, cavern: &cavern)
+                if cavern[y+dy][x+dx] == 10 {
+                    flash(x: x+dx, y: y+dy, cavern: &cavern)
+                }
             }
-        }
     }
 
     func iterationFlashes(cavern: inout [[Int]]) -> Int {
@@ -39,13 +42,8 @@ public final class Day11: Day {
     }
     public func part1() -> Int {
         var cavern = input
-        var flashes = 0
 
-        (0..<100).forEach { _ in
-            flashes += iterationFlashes(cavern: &cavern)
-        }
-
-        return flashes
+        return (0..<100).reduce(0, { array, _ in array + iterationFlashes(cavern: &cavern) })
     }
 
     public func part2() -> Int {
