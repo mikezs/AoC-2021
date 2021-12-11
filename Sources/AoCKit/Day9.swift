@@ -1,3 +1,4 @@
+import Algorithms
 import Foundation
 
 public final class Day9: Day {
@@ -19,12 +20,10 @@ public final class Day9: Day {
     }
 
     func lowPoints() -> [Position] {
-        var lowPoints = [Position]()
-
-        for x in (0..<input[0].count) {
-            for y in (0..<input.count) {
-                let position = (x, y)
-                let current = input[y][x]
+        product(0..<input[0].count, 0..<input.count)
+            .map { $0 as Position }
+            .reduce([Position]()) { (positions, position) in
+                let current = input[position.y][position.x]
                 var lowest = true
 
                 for pos in validAdjacentPositions(for: position) where current >= input[pos.y][pos.x] {
@@ -33,12 +32,11 @@ public final class Day9: Day {
                 }
 
                 if lowest {
-                    lowPoints.append(position)
+                    return positions + [position]
                 }
-            }
-        }
 
-        return lowPoints
+                return positions
+            }
     }
 
     func calculateBasin(for pos: Position, basin: inout [Position]) {
