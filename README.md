@@ -88,3 +88,6 @@ Success! I `map`ed and `filter`ed the lines to just leave me with the incomplete
 There's definitely room for some better coding because I copied/pasted the `if`s in the `switch` statements so might go back and fix those. 
 
 Edit: Using TDR (test-driven refactoring, where you write tests using results of working code with the view of getting the same output) I made more (just about readable) functional chains.
+
+### Day 11
+Although this looks very similar to Day 9, it manipulates the array, so quite a different set of operations. After completing part 1 I was worried I'd have to run my many loops a million times and get into problems with having an optimal algorithm, but ended up just needing to run until satisfied, which was actually only about double the iterations from part 1!

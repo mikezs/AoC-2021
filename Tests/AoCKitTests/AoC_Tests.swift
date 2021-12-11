@@ -285,14 +285,24 @@ gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
     }
 
     let day11Input = """
+5483143223
+2745854711
+5264556173
+6141336146
+6357385478
+4167524645
+2176841721
+6882881134
+4846848554
+5283751526
 """
 
     func testDay11Part1() {
-        XCTAssertEqual(Day11(input: day11Input).part1(), 0)
+        XCTAssertEqual(Day11(input: day11Input).part1(), 1656)
     }
 
     func testDay11Part2() {
-        XCTAssertEqual(Day11(input: day11Input).part2(), 0)
+        XCTAssertEqual(Day11(input: day11Input).part2(), 195)
     }
 
     let day12Input = """
