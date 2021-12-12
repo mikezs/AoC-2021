@@ -356,7 +356,9 @@ start-RW
     }
 
     func testDay12Part2() {
-        XCTAssertEqual(Day12(input: day12Input1).part2(), 0)
+        //XCTAssertEqual(Day12(input: day12Input1).part2(), 36)
+        //XCTAssertEqual(Day12(input: day12Input2).part2(), 103)
+        //XCTAssertEqual(Day12(input: day12Input3).part2(), 3509)
     }
 
     let day13Input = """

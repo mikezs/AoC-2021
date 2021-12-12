@@ -40,7 +40,7 @@ public final class Day12: Day {
         self.input = nodes
     }
 
-    func subRoutes(for node: Node, prefix: [Node]) -> [[Node]] {
+    func subRoutes(for node: Node, prefix: [Node], canVisitOneSmallTwice: Bool = false) -> [[Node]] {
         if node.name == "end" {
             return [[node]]
         }
@@ -48,11 +48,17 @@ public final class Day12: Day {
         var routes = [[Node]]()
 
         for connected in node.connections where connected.name != "start" {
-            if connected.name.lowercased() == connected.name && prefix.contains(where: { $0.name == connected.name }) {
-                continue
+            if connected.name.lowercased() == connected.name {
+                if !canVisitOneSmallTwice, prefix.contains(where: { $0.name == connected.name }) {
+                    continue
+                } else if canVisitOneSmallTwice {
+                    if Dictionary(grouping: prefix, by: { $0.name }).filter({ $1.count > 1 }).keys.count > 1 {
+                        continue
+                    }
+                }
             }
 
-            subRoutes(for: connected, prefix: prefix + [node])
+            subRoutes(for: connected, prefix: prefix + [node], canVisitOneSmallTwice: canVisitOneSmallTwice)
                 .forEach {
                     routes += [[connected] + $0]
                 }
@@ -66,6 +72,7 @@ public final class Day12: Day {
     }
 
     public func part2() -> Int {
-        0
+        subRoutes(for: input["start"]!, prefix: [], canVisitOneSmallTwice: true)
+            .count
     }
 }
