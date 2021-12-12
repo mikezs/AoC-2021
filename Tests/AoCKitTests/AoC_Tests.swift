@@ -305,15 +305,58 @@ gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
         XCTAssertEqual(Day11(input: day11Input).part2(), 195)
     }
 
-    let day12Input = """
+    let day12Input1 = """
+start-A
+start-b
+A-c
+A-b
+b-d
+A-end
+b-end
+"""
+
+    let day12Input2 = """
+dc-end
+HN-start
+start-kj
+dc-start
+dc-HN
+LN-dc
+HN-end
+kj-sa
+kj-HN
+kj-dc
+"""
+
+    let day12Input3 = """
+fs-end
+he-DX
+fs-he
+start-DX
+pj-DX
+end-zg
+zg-sl
+zg-pj
+pj-he
+RW-he
+fs-DX
+pj-RW
+zg-RW
+start-pj
+he-WI
+zg-he
+pj-fs
+start-RW
 """
 
     func testDay12Part1() {
-        XCTAssertEqual(Day12(input: day12Input).part1(), 0)
+        XCTAssertEqual(Day12(input: day12Input1).part1(), 10)
+        XCTAssertEqual(Day12(input: day12Input2).part1(), 19)
+        XCTAssertEqual(Day12(input: day12Input3).part1(), 226)
     }
 
     func testDay12Part2() {
-        XCTAssertEqual(Day12(input: day12Input).part2(), 0)
+        XCTAssertEqual(Day12(input: day12Input1).part2(), 0)
     }
 
     let day13Input = """
