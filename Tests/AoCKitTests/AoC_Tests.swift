@@ -390,7 +390,7 @@ fold along x=5
     }
 
     func testDay13Part2() {
-        XCTAssertEqual(Day13(input: day13Input).part2(), 0)
+        XCTAssertEqual(Day13(input: day13Input).part2(), 16)
     }
 
     let day14Input = """

@@ -1,3 +1,4 @@
+import Algorithms
 import Foundation
 
 public final class Day13: Day {
@@ -38,8 +39,6 @@ public final class Day13: Day {
         var newSheet = Set<Dot>()
 
         if fold.axis == "y" {
-            // Copy all the top
-            // Mutate the bottom
             sheet.forEach { dot in
                 if dot.y < fold.pos {
                     newSheet.insert(dot)
@@ -67,6 +66,29 @@ public final class Day13: Day {
     }
 
     public func part2() -> Int {
-        0
+        var sheet = self.sheet
+
+        folds.forEach {
+            sheet = fold(sheet: sheet, along: $0)
+        }
+
+        let maxX = sheet.map { $0.x }.max()!
+        let maxY = sheet.map { $0.y }.max()!
+
+        for y in 0...maxY {
+            var line = ""
+
+            for x in 0...maxX {
+                if sheet.contains(where: { $0.x == x && $0.y == y }) {
+                    line += "#"
+                } else {
+                    line += "."
+                }
+            }
+
+            print(line)
+        }
+
+        return sheet.count
     }
 }

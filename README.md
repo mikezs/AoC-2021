@@ -91,3 +91,10 @@ Edit: Using TDR (test-driven refactoring, where you write tests using results of
 
 ### Day 11
 Although this looks very similar to Day 9, it manipulates the array, so quite a different set of operations. After completing part 1 I was worried I'd have to run my many loops a million times and get into problems with having an optimal algorithm, but ended up just needing to run until satisfied, which was actually only about double the iterations from part 1!
+
+### Day 12
+
+### Day 13
+After yesterdays mishap (write-up to be added) I really enjoyed this challenge. Part 1 was just a think it through and write a solution and it worked first time I ran it. I had to create a struct for me `Dot` type becasue I couldn't make a tuple hashable and my solution relied on using a `Set` to eliminate duplicates.
+
+For part 2 I was a bit concerned that the folds wouldn't be symmetrical, but after doing a `min()`/`max()`, luckily the input didn't go negative, so it turned out to be very simple to do (for me input).
