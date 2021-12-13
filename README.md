@@ -93,6 +93,13 @@ Edit: Using TDR (test-driven refactoring, where you write tests using results of
 Although this looks very similar to Day 9, it manipulates the array, so quite a different set of operations. After completing part 1 I was worried I'd have to run my many loops a million times and get into problems with having an optimal algorithm, but ended up just needing to run until satisfied, which was actually only about double the iterations from part 1!
 
 ### Day 12
+Part 1 took a lot of thinking before I got started. Couldn't work out wether I needed to model just edges or just notes with connections and then would it be a travelling salesman type problem or recursion, but in the end I realised it was just the nodes (because I needed the names) with connections (and these were all I needed to look at each loop).
+
+The algorithm I modelled backwards (add in the checks for the end and the "can't go anywhere" before the "main" recursion) and worked on the first attempt.
+
+Part 2 I read the question wrong and I mistakenly thought you could visit each small node twice. I burned a good hour or so of my evening trying to get this right, and then debug why my answer was so much bigger than the example answers I then printed out my solution and worked through one that wasn't listed in the example answer and realised I must have read the question wrong and I did.
+
+When I then went back to fix my answer I couldn't work out what the correction I needed to make was and it was getting late and I needed to wind down, so decided to leave it unsolved for the night and will come back to it. I feel like I'm really close, it's just a silly bug or condition I haven't thought of yet.
 
 ### Day 13
 After yesterdays mishap (write-up to be added) I really enjoyed this challenge. Part 1 was just a think it through and write a solution and it worked first time I ran it. I had to create a struct for me `Dot` type becasue I couldn't make a tuple hashable and my solution relied on using a `Set` to eliminate duplicates.
