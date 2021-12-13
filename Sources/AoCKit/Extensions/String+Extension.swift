@@ -8,6 +8,7 @@ extension String {
 
 extension String {
     var binaryAsInt: Int? { Int(self, radix: 2) }
+    var isLowercase: Bool { lowercased() == self }
 
     func replacing(at offset: Int, with newValue: Character) -> String {
         var chars = Array(self)
