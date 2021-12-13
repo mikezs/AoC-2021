@@ -1,12 +1,16 @@
 import Foundation
 
 public final class Day12: Day {
-    class Node {
+    class Node: Equatable {
         let name: String
         var connections = [Node]()
 
         init(name: String) {
             self.name = name
+        }
+
+        static func == (lhs: Day12.Node, rhs: Day12.Node) -> Bool {
+            lhs.name == rhs.name
         }
     }
 
@@ -42,19 +46,26 @@ public final class Day12: Day {
 
     func subRoutes(for node: Node, prefix: [Node], canVisitOneSmallTwice: Bool = false) -> [[Node]] {
         if node.name == "end" {
-            return [[node]]
+            return [[]]
         }
 
         var routes = [[Node]]()
 
         for connected in node.connections where connected.name != "start" {
             if connected.name.lowercased() == connected.name {
-                if !canVisitOneSmallTwice, prefix.contains(where: { $0.name == connected.name }) {
+                let willCauseDuplicate = prefix.contains(where: { $0.name == connected.name })
+
+                if willCauseDuplicate, !canVisitOneSmallTwice {
                     continue
-                } else if canVisitOneSmallTwice {
-                    if Dictionary(grouping: prefix, by: { $0.name }).filter({ $1.count > 1 }).keys.count > 1 {
+                }
+
+                if canVisitOneSmallTwice {
+                    let alreadyHaveDuplicate = prefix.duplicates().filter({ $0.name.lowercased() == $0.name }).count >= 1
+
+                    if willCauseDuplicate, alreadyHaveDuplicate {
                         continue
                     }
+
                 }
             }
 
@@ -72,7 +83,26 @@ public final class Day12: Day {
     }
 
     public func part2() -> Int {
-        subRoutes(for: input["start"]!, prefix: [], canVisitOneSmallTwice: true)
-            .count
+        let routes = subRoutes(for: input["start"]!, prefix: [], canVisitOneSmallTwice: true)
+            .filter { $0.duplicates().filter { $0.name.lowercased() == $0.name }.count <= 1 }
+
+        //routes.forEach { print($0.reduce("start", { "\($0),\($1.name)" })) }
+
+        return routes.count
+    }
+}
+
+extension Array where Element: Equatable {
+    // Note: This is slow and inefficient
+    func duplicates() -> [Element] {
+        var duplicates = [Element]()
+
+        for element in self where !duplicates.contains(element) {
+            if filter({ $0 == element }).count > 1 {
+                duplicates.append(element)
+            }
+        }
+
+        return duplicates
     }
 }
