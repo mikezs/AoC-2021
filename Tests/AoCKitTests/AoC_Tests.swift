@@ -358,7 +358,7 @@ start-RW
     func testDay12Part2() {
         XCTAssertEqual(Day12(input: day12Input1).part2(), 36)
         XCTAssertEqual(Day12(input: day12Input2).part2(), 103)
-        // This passes but is slow, I need to optimise my solution
+        // This passes but is slow
         //XCTAssertEqual(Day12(input: day12Input3).part2(), 3509)
     }
 
