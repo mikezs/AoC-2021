@@ -32,6 +32,14 @@ three
         XCTAssertNil("".binaryAsInt)
     }
 
+    func testIsLowercase() {
+        XCTAssertTrue("1".isLowercase)
+        XCTAssertTrue("a".isLowercase)
+        XCTAssertTrue("hello this is lowercase".isLowercase)
+        XCTAssertFalse("A".isLowercase)
+        XCTAssertFalse("This is not all lowercase".isLowercase)
+    }
+
     func testReplaceIndexWithCharacter() {
         XCTAssertEqual("0123456789".replacing(at: 1, with: "x"), "0x23456789")
     }
