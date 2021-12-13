@@ -80,9 +80,9 @@ public final class Day13: Day {
 
             for x in 0...maxX {
                 if sheet.contains(where: { $0.x == x && $0.y == y }) {
-                    line += "#"
+                    line += "🟥"
                 } else {
-                    line += "."
+                    line += "⬛️"
                 }
             }
 
