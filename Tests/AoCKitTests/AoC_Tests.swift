@@ -420,7 +420,7 @@ CN -> C
     }
 
     func testDay14Part2() {
-        XCTAssertEqual(Day14(input: day14Input).part2(), 0/*2188189693529*/)
+        XCTAssertEqual(Day14(input: day14Input).part2(), 2188189693529)
     }
 
     let day15Input = """

@@ -16,20 +16,35 @@ public final class Day14: Day {
     }
 
     func counts(for polymer: [Character], to depth: Int) -> [Character: Int] {
-        var polymer = polymer
-
-        for _ in (0..<depth) {
-            var newPolymer = polymer
-
-            for pos in stride(from: polymer.count - 1, to: 0, by: -1) {
-                newPolymer.insert(insertions["\(polymer[pos-1])\(polymer[pos])"]!, at: pos)
+        var pairsCount = polymer
+            .prefix(upTo: polymer.count - 1)
+            .enumerated()
+            .reduce([String: Int]()) {
+                let key = "\($1.element)\(polymer[$1.offset+1])"
+                let current = $0[key] ?? 0
+                return $0.setting(key: key, value: current + 1)
             }
 
-            polymer = newPolymer
+        for _ in (0 ..< depth) {
+            var newPairs = [String: Int]()
+
+            for (pair, count) in pairsCount {
+                let newMiddle = insertions[pair]!
+                let pair1 = "\(pair.first!)\(newMiddle)"
+                let pair2 = "\(newMiddle)\(pair.last!)"
+
+                newPairs[pair1] = (newPairs[pair1] ?? 0) + count
+                newPairs[pair2] = (newPairs[pair2] ?? 0) + count
+            }
+
+            pairsCount = newPairs
         }
 
-        let counts = polymer.counts
-        return counts
+        return pairsCount
+            .reduce(into: [Character: Int]()) {
+                $0[$1.key[0]] = ($0[$1.key[0]] ?? 0) + ($1.value / 2)
+                $0[$1.key[1]] = ($0[$1.key[1]] ?? 0) + ($1.value / 2)
+            }
     }
 
     public func part1() -> Int {
@@ -38,6 +53,7 @@ public final class Day14: Day {
     }
 
     public func part2() -> Int {
-        0
+        let count = counts(for: input, to: 40).values
+        return count.max()! - count.min()!
     }
 }
