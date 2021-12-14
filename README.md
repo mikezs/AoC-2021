@@ -105,3 +105,6 @@ When I then went back to fix my answer I couldn't work out what the correction I
 After yesterdays mishap (write-up to be added) I really enjoyed this challenge. Part 1 was just a think it through and write a solution and it worked first time I ran it. I had to create a struct for me `Dot` type becasue I couldn't make a tuple hashable and my solution relied on using a `Set` to eliminate duplicates.
 
 For part 2 I was a bit concerned that the folds wouldn't be symmetrical, but after doing a `min()`/`max()`, luckily the input didn't go negative, so it turned out to be very simple to do (for me input).
+
+### Day 14
+I don't want to talk about it.

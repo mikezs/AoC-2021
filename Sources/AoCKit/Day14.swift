@@ -33,17 +33,21 @@ public final class Day14: Day {
                 let pair1 = "\(pair.first!)\(newMiddle)"
                 let pair2 = "\(newMiddle)\(pair.last!)"
 
-                newPairs[pair1] = (newPairs[pair1] ?? 0) + count
-                newPairs[pair2] = (newPairs[pair2] ?? 0) + count
+                newPairs[pair1, default: 0] += count
+                newPairs[pair2, default: 0] += count
             }
 
             pairsCount = newPairs
         }
 
+        var initial = [Character: Int]()
+        initial[polymer.first!, default: 0] += 1
+        initial[polymer.last!, default: 0] += 1
+
         return pairsCount
-            .reduce(into: [Character: Int]()) {
-                $0[$1.key[0]] = ($0[$1.key[0]] ?? 0) + ($1.value / 2)
-                $0[$1.key[1]] = ($0[$1.key[1]] ?? 0) + ($1.value / 2)
+            .reduce(into: initial) {
+                $0[$1.key[0], default: 0] += ($1.value + 1) / 2
+                $0[$1.key[1], default: 0] += ($1.value + 1) / 2
             }
     }
 
