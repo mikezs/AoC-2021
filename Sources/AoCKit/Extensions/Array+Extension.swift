@@ -14,6 +14,10 @@ extension Array where Element: Hashable {
             .filter { $0.value == max }
             .map { $0.key }
     }
+
+    var counts: [Element: Int] {
+        reduce([Element: Int]()) { $0.setting(key: $1, value: ($0[$1] ?? 0) + 1) }
+    }
 }
 
 extension Array where Element: Collection, Element.Index == Int {

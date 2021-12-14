@@ -12,6 +12,12 @@ final class ArrayExtensionTests: XCTestCase {
         //XCTAssertEqual([].mode(), [])
     }
 
+    func testCounts() {
+        XCTAssertEqual(["a", "a", "b"].counts, ["a": 2, "b": 1])
+        XCTAssertEqual(["a"].counts, ["a": 1])
+        XCTAssertEqual([Int]().counts, [Int: Int]())
+    }
+
     func testVerticalSlice() {
         let array = [
             ["a", "b", "c"],
