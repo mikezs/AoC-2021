@@ -438,7 +438,12 @@ CN -> C
 """
 
     func testDay16Part1() {
-        XCTAssertEqual(Day16(input: day16Part1Input).part1(), 0)
+        XCTAssertEqual(Day16(input: "D2FE28").part1(), 6)
+        XCTAssertEqual(Day16(input: "8A004A801A8002F478").part1(), 16)
+        XCTAssertEqual(Day16(input: "38006F45291200").part1(), 9)
+//        XCTAssertEqual(Day16(input: "620080001611562C8802118E34").part1(), 12)
+//        XCTAssertEqual(Day16(input: "C0015000016115A2E0802F182340").part1(), 23)
+//        XCTAssertEqual(Day16(input: "A0016C880162017C3686B18A3D4780").part1(), 31)
     }
 
     func testDay16Part2() {
