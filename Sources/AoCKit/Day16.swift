@@ -1,15 +1,42 @@
 import Foundation
 
 indirect enum Packet {
-    case op(Int, [Packet])
+    enum Operator: Int {
+        case sum = 0
+        case product = 1
+        case min = 2
+        case max = 3
+        case greater = 5
+        case less = 6
+        case equal = 7
+    }
+
+    case op(Int, Operator, [Packet])
     case literal(Int, Int)
 
     var total: Int {
         switch self {
-        case let .op(version, packets):
+        case let .op(version, _, packets):
             return version + packets.reduce(0) { $0 + $1.total }
         case let .literal(version, _):
             return version
+        }
+    }
+
+    var value: Int {
+        switch self {
+        case let .op(_, op, packets):
+            switch op {
+            case .sum: return packets.reduce(0) { $0 + $1.value }
+            case .product: return packets.reduce(1) { $0 * $1.value }
+            case .min: return packets.map { $0.value }.min()!
+            case .max: return packets.map { $0.value }.max()!
+            case .greater: return packets[0].value > packets[1].value ? 1 : 0
+            case .less: return packets[0].value < packets[1].value ? 1 : 0
+            case .equal: return packets[0].value == packets[1].value ? 1 : 0
+            }
+        case let .literal(_, value):
+            return value
         }
     }
 }
@@ -37,10 +64,8 @@ public final class Day16: Day {
     func packet(at position: Int) -> (packet: Packet, offset: Int)? {
         guard input.count - 6 > 0 else { return nil }
 
-        let version = String(input[position..<position+3]).binaryAsInt
-        let packetID = String(input[position+3..<position+6]).binaryAsInt
-
-        guard let version = version else { fatalError() }
+        let version = String(input[position..<position+3]).binaryAsInt!
+        let packetID = String(input[position+3..<position+6]).binaryAsInt!
 
         if packetID == 4 {
             var literalOffset = position+6
@@ -90,7 +115,7 @@ public final class Day16: Day {
                 offset = currentPacketOffset
             }
 
-            return (.op(version, subPackets), offset)
+            return (.op(version, Packet.Operator(rawValue: packetID)!, subPackets), offset)
         }
     }
 
@@ -99,6 +124,6 @@ public final class Day16: Day {
     }
 
     public func part2() -> Int {
-        return 0
+        packet(at: 0)!.packet.value
     }
 }

@@ -108,3 +108,10 @@ For part 2 I was a bit concerned that the folds wouldn't be symmetrical, but aft
 
 ### Day 14
 I don't want to talk about it.
+
+### Day 15
+
+### Day 16
+Part 1 was converting the hex to a binary string, then keeping track of the offsets to walk through it once. I need to read the question properly because I spent time debugging features that were just plain old incorrect.
+
+Part 2 was just using many reduce functions with a switch for the type of operator, worked on my second try after a silly mistake for the processing 

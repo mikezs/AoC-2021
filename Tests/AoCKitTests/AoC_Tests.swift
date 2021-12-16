@@ -434,9 +434,6 @@ CN -> C
         XCTAssertEqual(Day15(input: day15Input).part2(), 0)
     }
 
-    let day16Part1Input = """
-"""
-
     func testDay16Part1() {
         XCTAssertEqual(Day16(input: "D2FE28").part1(), 6)
         XCTAssertEqual(Day16(input: "8A004A801A8002F478").part1(), 16)
@@ -447,7 +444,7 @@ CN -> C
     }
 
     func testDay16Part2() {
-        XCTAssertEqual(Day16(input: day16Part1Input).part2(), 0)
+        XCTAssertEqual(Day16(input: "C200B40A82").part2(), 3)
     }
 
     let day17Input = """
