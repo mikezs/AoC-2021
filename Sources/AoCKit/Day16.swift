@@ -43,7 +43,6 @@ public final class Day16: Day {
         guard let version = version else { fatalError() }
 
         if packetID == 4 {
-            print("processing lit")
             var literalOffset = position+6
 
             var currentBinary = ""
@@ -58,28 +57,37 @@ public final class Day16: Day {
 
             return (.literal(version, currentBinary.binaryAsInt!), literalOffset)
         } else {
-            print("processing op")
             var lengthOffset = position+6
             let lengthType = input[lengthOffset]
             lengthOffset += 1
-            let length: Int
+            var subPackets = [Packet]()
+            let offset: Int
 
             if lengthType == "0" {
-                length = String(input[lengthOffset..<lengthOffset+15]).binaryAsInt!
+                let length = String(input[lengthOffset..<lengthOffset+15]).binaryAsInt!
                 lengthOffset += 15
+
+                var currentPacketOffset = lengthOffset
+                offset = lengthOffset+length
+
+                while currentPacketOffset < offset {
+                    let packet = packet(at: currentPacketOffset)
+                    currentPacketOffset = packet!.offset
+                    subPackets.append(packet!.packet)
+                }
             } else {
-                length = String(input[lengthOffset..<lengthOffset+11]).binaryAsInt!
+                let numberOfSubPackets = String(input[lengthOffset..<lengthOffset+11]).binaryAsInt!
                 lengthOffset += 11
-            }
 
-            var subPackets = [Packet]()
-            var currentPacketOffset = lengthOffset
-            let offset = lengthOffset+length
+                var currentPacketOffset = lengthOffset
 
-            while currentPacketOffset < offset {
-                let packet = packet(at: currentPacketOffset)
-                currentPacketOffset = packet!.offset
-                subPackets.append(packet!.packet)
+                for _ in 0..<numberOfSubPackets {
+                    let packet = packet(at: currentPacketOffset)
+                    currentPacketOffset = packet!.offset
+                    subPackets.append(packet!.packet)
+                }
+
+                offset = currentPacketOffset
             }
 
             return (.op(version, subPackets), offset)
